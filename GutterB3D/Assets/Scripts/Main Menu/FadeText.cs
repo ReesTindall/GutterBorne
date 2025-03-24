@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FadeTextOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Graphic uiText; // Can be Text, TextMeshProUGUI, etc.
+    public Graphic uiText;
     public float fadeDuration = 0.5f;
     private Color originalColor;
     private Coroutine fadeCoroutine;

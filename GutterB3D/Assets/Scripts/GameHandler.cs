@@ -13,7 +13,7 @@ public class GameHandler : MonoBehaviour
       // Return to MainMenu
       public void MainMenu() {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Main_Menu");
       }
 
       public void QuitGame() {
@@ -26,5 +26,11 @@ public class GameHandler : MonoBehaviour
 
       public void Credits() {
             SceneManager.LoadScene("Credits");
+      }
+
+      public void Options()
+      {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Option_Menu");
       }
 }
