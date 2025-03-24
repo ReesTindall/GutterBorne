@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641275, b: 0.5748176, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 278428843}
   - component: {fileID: 278428842}
   m_Layer: 5
-  m_Name: Volume_IMG
+  m_Name: SFX_IMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,10 +1105,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 204786069}
   m_HandleRect: {fileID: 426878697}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.515
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 1003934634}
   - component: {fileID: 1003934633}
   - component: {fileID: 1003934632}
+  - component: {fileID: 1003934636}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1258,6 +1259,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1003934636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003934631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7034ad1ed493e4ba6afd776759591821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: d226115e3019d4473920256788df2707, type: 2}
+  musicSlider: {fileID: 974411003}
+  sfxSlider: {fileID: 1050474751}
 --- !u!1 &1050474749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1285,7 @@ GameObject:
   - component: {fileID: 1050474750}
   - component: {fileID: 1050474751}
   m_Layer: 5
-  m_Name: Volume_Slider
+  m_Name: SFX_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,10 +1358,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 579906374}
   m_HandleRect: {fileID: 16687340}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.517
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
