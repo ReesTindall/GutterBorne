@@ -5,7 +5,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
     public float moveSpeed = 1f;
     float startSpeed = 1f;
     public float rotationSpeed = 720f;
-    public float dampingDrag = 2f;
+    public float dampingDrag = 0.1f;
     public float jumpForce = 5f;
 
     private Rigidbody rb;
@@ -18,6 +18,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.drag = dampingDrag;
+        Debug.Log("Velocity: " + rb.velocity);
     }
 
     void Update()
@@ -26,10 +27,12 @@ public class BlobMovementWorldSpace : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         input = new Vector3(h, 0, v);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded()){
             jump = true;
+        }
+        Debug.Log("Update running | IsGrounded: " + IsGrounded());
+        Debug.Log("Horizontal: " + Input.GetAxis("Horizontal") + " | Vertical: " + Input.GetAxis("Vertical"));
     }
-
     void FixedUpdate()
     {
     
@@ -66,6 +69,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
         } else {
             GetComponent<Slime_Scale>().moveTweenOn = false;
         }
+
     }
 
     private bool IsGrounded()

@@ -5,7 +5,7 @@ using System;
 
 public class AbsorbFood : MonoBehaviour
 {
-    public float sizeIncrease = 2f;
+    public float sizeIncrease = 1.1f;
     public Transform centerPnt;
 
     public AudioClip absorptionSound;
@@ -34,7 +34,7 @@ public class AbsorbFood : MonoBehaviour
             }
 
             transform.localScale *= sizeIncrease;
-            GetComponent<BlobMovementWorldSpace>().moveSpeed *=2;
+            GetComponent<BlobMovementWorldSpace>().moveSpeed += 0.1f;
 
             other.gameObject.transform.position = centerPnt.position;
             other.gameObject.transform.parent = centerPnt;

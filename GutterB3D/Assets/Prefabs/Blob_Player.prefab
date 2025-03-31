@@ -36,7 +36,7 @@ Transform:
   - {fileID: 818761022642682303}
   - {fileID: 6957751342577238404}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &358577125947728972
 BoxCollider:
@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d585452988c4681924ffc65023412c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeIncrease: 2
+  sizeIncrease: 1.1
   centerPnt: {fileID: 6957751342577238404}
+  absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
   myFood: []
 --- !u!114 &4315548918941833516
 MonoBehaviour:
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771de2eaca09d44f5a712db13e74fbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
   rotationSpeed: 720
   dampingDrag: 2
   jumpForce: 5
@@ -348,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fc501a58779a14e79ac803cf41a1933f, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
