@@ -8,13 +8,31 @@ public class AbsorbFood : MonoBehaviour
     public float sizeIncrease = 2f;
     public Transform centerPnt;
 
+    public AudioClip absorptionSound;
+    private AudioSource audioSource;
+
     public List<GameObject> myFood = new List<GameObject>();
     int myFoodIndex = 0;
+
+    void Start()
+    {
+        // Try to get an AudioSource; if none exists, add one.
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Food"))
         {
+            if (absorptionSound != null)
+            {
+                audioSource.PlayOneShot(absorptionSound);
+            }
+
             transform.localScale *= sizeIncrease;
             GetComponent<BlobMovementWorldSpace>().moveSpeed *=2;
 
