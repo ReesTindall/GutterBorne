@@ -13,12 +13,15 @@ public class BlobMovementWorldSpace : MonoBehaviour
     Vector3 input; 
     bool jumpTweenActive = false;
 
+    public AudioClip jumpSound; 
+    private AudioSource audioSource;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.drag = dampingDrag;
-        Debug.Log("Velocity: " + rb.velocity);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,8 +33,6 @@ public class BlobMovementWorldSpace : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded()){
             jump = true;
         }
-        Debug.Log("Update running | IsGrounded: " + IsGrounded());
-        Debug.Log("Horizontal: " + Input.GetAxis("Horizontal") + " | Vertical: " + Input.GetAxis("Vertical"));
     }
     void FixedUpdate()
     {
@@ -54,6 +55,11 @@ public class BlobMovementWorldSpace : MonoBehaviour
         {
             jumpTweenActive = true;
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            if (jumpSound != null && audioSource != null)
+            {
+                Debug.Log("jump sound");
+                audioSource.PlayOneShot(jumpSound);
+            }
             jump = false;
         }
 
