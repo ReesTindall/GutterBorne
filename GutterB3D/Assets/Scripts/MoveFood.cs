@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveFood : MonoBehaviour {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     public bool isAbsorbed = false;  
 
     void Update() {
