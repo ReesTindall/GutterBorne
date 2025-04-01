@@ -27,8 +27,9 @@ public class BlobMovementWorldSpace : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        input = new Vector3(h, 0, v);
+        //float v = Input.GetAxis("Vertical");
+        //input = new Vector3(h, 0, v);
+        input = new Vector3(h, 0, 0);
 
         if (Input.GetButtonDown("Jump") && IsGrounded()){
             jump = true;
