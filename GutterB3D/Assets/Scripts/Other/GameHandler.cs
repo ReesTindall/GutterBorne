@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameHandler : MonoBehaviour
 {
     public void StartGame() {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Demo");
       }
 
       // Return to MainMenu

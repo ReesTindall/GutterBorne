@@ -20,23 +20,16 @@ public class VolumeSettings : MonoBehaviour
     }
 
     void Start() {
-        /*
-            UNCOMMENT BELOW WHEN PLAYER CREATED!
-        */
-        
-        // musicSlider.value = PlayerPrefs.GetFloat(AudioManager.MUSIC_KEY, 1f);
-        // sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_KEY, 1f);
+  
+        musicSlider.value = PlayerPrefs.GetFloat(AudioManager.MUSIC_KEY, 1f);
+        sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_KEY, 1f);
     }
 
     //save set volume values
     void OnDisable() {
 
-        /*
-            UNCOMMENT BELOW WHEN PLAYER CREATED!
-        */
-
-        // PlayerPrefs.SetFloat(AudioManager.MUSIC_KEY, musicSlider.value);
-        // PlayerPrefs.SetFloat(AudioManager.SFX_KEY, sfxSlider.value);
+        PlayerPrefs.SetFloat(AudioManager.MUSIC_KEY, musicSlider.value);
+        PlayerPrefs.SetFloat(AudioManager.SFX_KEY, sfxSlider.value);
     }
 
     //change volume of music
