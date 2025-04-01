@@ -36,6 +36,13 @@ public class AbsorbFood : MonoBehaviour
             transform.localScale *= sizeIncrease;
             GetComponent<BlobMovementWorldSpace>().moveSpeed += 0.1f;
 
+            MoveFood foodMovement = other.gameObject.GetComponent<MoveFood>();
+            if (foodMovement != null)
+            {
+                foodMovement.isAbsorbed = true;
+            }
+
+
             other.gameObject.transform.position = centerPnt.position;
             other.gameObject.transform.parent = centerPnt;
             myFood.Add(other.gameObject);
