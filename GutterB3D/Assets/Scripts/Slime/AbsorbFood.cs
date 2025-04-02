@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 
 public class AbsorbFood : MonoBehaviour
@@ -10,6 +11,7 @@ public class AbsorbFood : MonoBehaviour
 
     public AudioClip absorptionSound;
     private AudioSource audioSource;
+    public AudioMixerGroup mixerGroup;
 
     public List<GameObject> myFood = new List<GameObject>();
     int myFoodIndex = 0;
@@ -30,6 +32,7 @@ public class AbsorbFood : MonoBehaviour
         {
             if (absorptionSound != null)
             {
+                audioSource.outputAudioMixerGroup = mixerGroup;
                 audioSource.PlayOneShot(absorptionSound);
             }
 

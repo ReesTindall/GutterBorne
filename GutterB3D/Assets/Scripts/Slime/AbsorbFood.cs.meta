@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - centerPnt: {instanceID: 0}
   - absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
+  - mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

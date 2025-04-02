@@ -101,6 +101,7 @@ MonoBehaviour:
   sizeIncrease: 1.1
   centerPnt: {fileID: 6957751342577238404}
   absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
+  mixerGroup: {fileID: 0}
   myFood: []
 --- !u!114 &4315548918941833516
 MonoBehaviour:
@@ -118,6 +119,7 @@ MonoBehaviour:
   rotationSpeed: 720
   dampingDrag: 2
   jumpForce: 5
+  jumpSound: {fileID: 0}
 --- !u!114 &7989517199450742983
 MonoBehaviour:
   m_ObjectHideFlags: 0
