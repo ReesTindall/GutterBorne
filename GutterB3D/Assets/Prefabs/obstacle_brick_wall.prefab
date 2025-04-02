@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d5275139a27dd49a3a1aa56843a2765f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5275139a27dd49a3a1aa56843a2765f, type: 3}
       propertyPath: m_LocalScale.x
@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5275139a27dd49a3a1aa56843a2765f, type: 3}
       propertyPath: m_Name
-      value: obstacle_brick_wall Variant
+      value: obstacle_brick_wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

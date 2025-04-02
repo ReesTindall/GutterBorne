@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 44608616704419359}
   - component: {fileID: 4315548918941833516}
   - component: {fileID: 7989517199450742983}
+  - component: {fileID: 7322837131332519473}
   m_Layer: 0
   m_Name: Blob_Player
   m_TagString: Player
@@ -101,7 +102,7 @@ MonoBehaviour:
   sizeIncrease: 1.1
   centerPnt: {fileID: 6957751342577238404}
   absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
-  mixerGroup: {fileID: 0}
+  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
   myFood: []
 --- !u!114 &4315548918941833516
 MonoBehaviour:
@@ -120,6 +121,7 @@ MonoBehaviour:
   dampingDrag: 2
   jumpForce: 5
   jumpSound: {fileID: 0}
+  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
 --- !u!114 &7989517199450742983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +212,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpTweenOn: 0
   moveTweenOn: 0
+--- !u!114 &7322837131332519473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219158198346048604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2072ebc09f88430fa9c507e490cb594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
+  sfx1: {fileID: 8300000, guid: 898e71a5e3c874637942a2bac6c41514, type: 3}
+  sfx2: {fileID: 8300000, guid: 9b249b0851fca4397a0cf59144f312c6, type: 3}
 --- !u!1 &2477876744818716141
 GameObject:
   m_ObjectHideFlags: 0

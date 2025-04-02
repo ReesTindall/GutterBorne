@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BlobMovementWorldSpace : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
 
     public AudioClip jumpSound; 
     private AudioSource audioSource;
+    public AudioMixerGroup mixerGroup;
 
     void Start()
     {
@@ -59,6 +61,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
             if (jumpSound != null && audioSource != null)
             {
                 Debug.Log("jump sound");
+                audioSource.outputAudioMixerGroup = mixerGroup;
                 audioSource.PlayOneShot(jumpSound);
             }
             jump = false;
