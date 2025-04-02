@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+//INCLUDE IN EVERY SCENE
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
@@ -26,7 +27,7 @@ public class AudioManager : MonoBehaviour
         LoadVolume();
     }
 
-    //the volumes are saved in VolumeSettings.cs (<-- in every scene; NOT this script)
+    //the volumes are saved in VolumeSettings.cs
     void LoadVolume() {
 
         float volumeMusic = PlayerPrefs.GetFloat(MUSIC_KEY, 1f);
