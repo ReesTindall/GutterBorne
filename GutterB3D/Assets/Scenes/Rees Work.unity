@@ -1912,6 +1912,7 @@ MonoBehaviour:
   dampingDrag: 2
   jumpForce: 5
   jumpSound: {fileID: 0}
+  mixerGroup: {fileID: 0}
 --- !u!54 &1832037864
 Rigidbody:
   m_ObjectHideFlags: 0
