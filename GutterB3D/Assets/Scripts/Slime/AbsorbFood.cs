@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using System;
 
 public class AbsorbFood : MonoBehaviour
 {
     public float sizeIncrease = 1.1f;
     public Transform centerPnt;
+
+    public Slider slider;
 
     public AudioClip absorptionSound;
     private AudioSource audioSource;
@@ -67,3 +70,4 @@ public class AbsorbFood : MonoBehaviour
     }
 
 }
+

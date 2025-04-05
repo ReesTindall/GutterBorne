@@ -37,7 +37,7 @@ Transform:
   - {fileID: 818761022642682303}
   - {fileID: 6957751342577238404}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &358577125947728972
 BoxCollider:
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeIncrease: 1.1
   centerPnt: {fileID: 6957751342577238404}
+  slider: {fileID: 4975058348999683866, guid: 0830b7b53cc6046b79841301abc04f23, type: 3}
   absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
   mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
   myFood: []
