@@ -7,7 +7,6 @@ public class LoseSlime : MonoBehaviour
 {
     public float sizeDecrease = 1.1f;
     public Transform centerPnt;
-
     public AudioClip absorptionSound;
     private AudioSource audioSource;
 
@@ -62,5 +61,5 @@ public class LoseSlime : MonoBehaviour
     //             1 / blobDivider.z);
     //     }
     //}
-
 }
+
