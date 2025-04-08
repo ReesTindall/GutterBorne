@@ -11,6 +11,7 @@ public class SlimeSizeBar : MonoBehaviour
     void Start() {
           if (sizeBar != null) {
             sizeBar.SetMaxSize(maxSize);
+            sizeBar.SetSize(slimeSize);
         } else {
             Debug.LogError("SizeBar reference missing");
         }

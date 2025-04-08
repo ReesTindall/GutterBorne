@@ -257,9 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de8938cbedfb4f9da55515deb3b9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeSize: 20
-  maxSize: 50
-  sizeBar: {fileID: 600578301625102968, guid: 0830b7b53cc6046b79841301abc04f23, type: 3}
+  slimeSize: 35
+  maxSize: 100
+  sizeBar: {fileID: 3071227705966838120, guid: 7b09d5369f34d4188a691b9557da057d, type: 3}
 --- !u!1 &2477876744818716141
 GameObject:
   m_ObjectHideFlags: 0

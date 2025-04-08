@@ -7,24 +7,25 @@ public class SizeBar : MonoBehaviour
 {
    public float slimeSize, maxSize, width, height;
 
-   [SerializeField] private RectTransform sizeBar;
+   [SerializeField] private Gradient gradient;
+   [SerializeField] private Image image;
 
    public void SetMaxSize(float max) {
       maxSize = max;
    }
 
    public void SetSize(float size) {
-      Debug.Log("slime size: ");
-      Debug.Log(slimeSize);
       slimeSize = size;
 
-        if (maxSize > 0) {
-            float newWidth = (slimeSize / maxSize) * width;
-            sizeBar.sizeDelta = new Vector2(newWidth, height);
-            Debug.Log("new width: " + newWidth);
-        } else {
-            Debug.LogWarning("max size is 0 or negative");
-        }
+      //change percent of image shown (to mimic slider)
+      if(maxSize > 0) {
+         float newFill= slimeSize / maxSize;
+         image.fillAmount = newFill;
+
+         //change color gradient
+         Color newColor = gradient.Evaluate(newFill);
+         image.color = newColor;
+      }
    }
 }
 
