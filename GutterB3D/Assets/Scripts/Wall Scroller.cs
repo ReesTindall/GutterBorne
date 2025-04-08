@@ -4,42 +4,51 @@ using UnityEngine;
 public class WallScroller : MonoBehaviour
 {
     public GameObject wallPrefab;
+    public GameObject groundPrefab;
     public float scrollSpeed = 5f;
-    public float wallLength = 20f;     // Length of one wall piece
-    public float spawnThresholdZ = 10f; // When to spawn the next wall
+
+    public float wallLength = 20f;     // Offset for wall pieces
+    public float groundLength = 80f;   // Offset for ground pieces (set this to match your ground prefab's length)
+    public float spawnThresholdZ = 10f; // When to spawn the next object
 
     private List<GameObject> activeWalls = new List<GameObject>();
+    private List<GameObject> activeGrounds = new List<GameObject>();
 
     void Start()
     {
-        // Start with one wall in place
-        GameObject firstWall = Instantiate(wallPrefab, Vector3.zero, Quaternion.identity);
-        activeWalls.Add(firstWall);
+        // Start with one wall and one ground piece in place.
+        activeWalls.Add(Instantiate(wallPrefab, Vector3.zero, Quaternion.identity));
+        activeGrounds.Add(Instantiate(groundPrefab, Vector3.zero, Quaternion.identity));
     }
 
     void Update()
     {
-        // Move all walls forward
-        foreach (GameObject wall in activeWalls)
+        ScrollObjects(activeWalls, wallPrefab, wallLength);
+        ScrollObjects(activeGrounds, groundPrefab, groundLength);
+    }
+
+    // Helper method that scrolls, spawns new objects, and removes old ones.
+    void ScrollObjects(List<GameObject> objects, GameObject prefab, float prefabLength)
+    {
+        // Move every object in the list.
+        foreach (GameObject obj in objects)
         {
-            wall.transform.Translate(Vector3.forward * scrollSpeed * Time.deltaTime);
+            obj.transform.Translate(Vector3.forward * scrollSpeed * Time.deltaTime);
         }
 
-        // Check if we should spawn a new wall
-        GameObject lastWall = activeWalls[activeWalls.Count - 1];
-
-        if (lastWall.transform.position.z <= spawnThresholdZ)
+        // Check the last object to see if we need to spawn a new one.
+        GameObject last = objects[objects.Count - 1];
+        if (last.transform.position.z <= spawnThresholdZ)
         {
-            // Spawn a new wall at the end
-            Vector3 newPos = lastWall.transform.position + new Vector3(0, 0, wallLength);
-            GameObject newWall = Instantiate(wallPrefab, newPos, Quaternion.identity);
-            activeWalls.Add(newWall);
+            Vector3 newPos = last.transform.position + new Vector3(0, 0, prefabLength);
+            objects.Add(Instantiate(prefab, newPos, Quaternion.identity));
         }
 
-        if (activeWalls[0].transform.position.z > 100f) // Or some distance behind
+        // Remove the first object if it's way behind.
+        if (objects[0].transform.position.z > 100f) // Adjust threshold as needed.
         {
-            Destroy(activeWalls[0]);
-            activeWalls.RemoveAt(0);
+            Destroy(objects[0]);
+            objects.RemoveAt(0);
         }
     }
 }
