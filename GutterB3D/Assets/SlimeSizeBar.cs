@@ -20,12 +20,12 @@ public class SlimeSizeBar : MonoBehaviour
      void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Food")){
-            SetSize(2f);
+            SetSize(1f);
         }  
         
 
         if (other.CompareTag("Enemy")) {
-            SetSize(-2f);
+            SetSize(-1f);
         }
     }
 

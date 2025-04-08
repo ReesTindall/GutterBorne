@@ -100,19 +100,19 @@ MonoBehaviour:
     key0: {r: 1, g: 0, b: 0, a: 1}
     key1: {r: 0.9333334, g: 0.79215693, b: 0, a: 1}
     key2: {r: 0.45687678, g: 0.9894925, b: 0, a: 0}
-    key3: {r: 0.46030492, g: 0.98807263, b: 0, a: 0}
-    key4: {r: 0.43150687, g: 1, b: 0, a: 0}
+    key3: {r: 0.43150687, g: 1, b: 0, a: 0}
+    key4: {r: 0.46030492, g: 0.98807263, b: 0, a: 0}
     key5: {r: 1, g: 0.8314501, b: 0, a: 0}
-    key6: {r: 1, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 8288
-    ctime1: 18311
-    ctime2: 27178
-    ctime3: 29491
-    ctime4: 32575
-    ctime5: 54163
-    ctime6: 59367
-    ctime7: 0
+    key6: {r: 1, g: 0.78905004, b: 0, a: 0}
+    key7: {r: 1, g: 0, b: 0, a: 0}
+    ctime0: 18119
+    ctime1: 21781
+    ctime2: 23901
+    ctime3: 31611
+    ctime4: 37201
+    ctime5: 43369
+    ctime6: 48573
+    ctime7: 50886
     atime0: 0
     atime1: 65535
     atime2: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_ColorSpace: -1
-    m_NumColorKeys: 7
+    m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   image: {fileID: 3619439850694138925}
 --- !u!1 &6721127168824744015
