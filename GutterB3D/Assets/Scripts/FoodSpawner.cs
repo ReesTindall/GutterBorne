@@ -6,6 +6,8 @@ public class FoodSpawner : MonoBehaviour {
 
     // Object variables
     public GameObject foodPrefab;
+    // public List<GameObject> foodPrefabs;
+
     public Transform[] spawnPoints;
     private int rangeEnd;
 
@@ -29,7 +31,20 @@ public class FoodSpawner : MonoBehaviour {
         }
     }
 
-    void SpawnFood(){
+    // void SpawnFood(){
+    //     if (foodPrefabs.Count == 0 || spawnPoints.Length == 0) return;
+
+    //     // int spawnIndex = Random.Range(0, spawnPoints.Length);
+    //     int spawnIndex = Random.Range(0, rangeEnd);
+    //     int foodIndex = Random.Range(0, foodPrefabs.Count);
+
+    //     Transform spawnPoint = spawnPoints[spawnIndex];
+    //     GameObject foodToSpawn = foodPrefabs[foodIndex];
+
+    //     Instantiate(foodToSpawn, spawnPoint.position, Quaternion.identity);
+    //     Debug.Log("Spawning Food: " + foodToSpawn.name);
+    // }
+        void SpawnFood(){
         int spawnIndex = Random.Range(0, rangeEnd);
         Transform spawnPoint = spawnPoints[spawnIndex];
         Instantiate(foodPrefab, spawnPoint.position, Quaternion.identity);
