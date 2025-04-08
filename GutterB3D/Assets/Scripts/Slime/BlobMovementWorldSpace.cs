@@ -44,7 +44,7 @@ public class BlobMovementWorldSpace : MonoBehaviour
         {
             Vector3 moveDir = input.normalized;
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            // transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
             Vector3 newVelocity = moveDir * moveSpeed;
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
