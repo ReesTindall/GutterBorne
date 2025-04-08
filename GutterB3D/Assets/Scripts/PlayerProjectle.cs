@@ -23,11 +23,13 @@ public class PlayerProjectile : MonoBehaviour{
           }
          if (other.gameObject.tag != "Player") {
                //GameObject animEffect = Instantiate (hitVFX, transform.position, Quaternion.identity); //uncomment VFX #2
-               hitSFX.Play(); //uncomment SFX #2
+               hitSFX.pitch = Random.Range(0.9f, 1.2f);
+               hitSFX.PlayOneShot(hitSFX.clip); //uncomment SFX #2
                gameObject.GetComponent<Collider>().enabled = false;
                projectileArt.SetActive(false);
                StartCoroutine(selfDestructHit());
           }
+          
       }
 
       IEnumerator selfDestructHit(){
