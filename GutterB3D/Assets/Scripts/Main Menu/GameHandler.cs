@@ -25,6 +25,7 @@ public class GameHandler : MonoBehaviour
       }
 
       public void Credits() {
+            Time.timeScale = 1f;
             SceneManager.LoadScene("Credits");
       }
 
