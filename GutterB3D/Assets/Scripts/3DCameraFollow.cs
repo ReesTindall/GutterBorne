@@ -38,13 +38,13 @@ public class CameraControl3DLERP : MonoBehaviour
         // Adjust offset based on scale
         Vector3 dynamicOffset = baseOffset * scaleMultiplier * distanceFactor;
 
-		// Clamp Y so camera never goes below 0.1
-		if (dynamicOffset.y < 0.1f)
-			dynamicOffset.y = 0.1f;
+		// Clamp Y so camera never goes below 0.2
+		if (dynamicOffset.y < 0.2f)
+			dynamicOffset.y = 0.2f;
 		
-		// Clamp Z so camera never goes below -1.5
-		if (dynamicOffset.y < -1.5f)
-			dynamicOffset.y = -1.5f;
+		// Clamp Z so camera never goes above -1
+		if (dynamicOffset.z > -1f)
+			dynamicOffset.z = -1f;
 
         // Calculate position
         Vector3 desiredPosition = target.position + dynamicOffset;
