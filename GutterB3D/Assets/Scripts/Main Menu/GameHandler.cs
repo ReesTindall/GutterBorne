@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameHandler : MonoBehaviour
 {
     public void StartGame() {
-            SceneManager.LoadScene("Rees Work");
+            SceneManager.LoadScene("SampleScene");
       }
 
       // Return to MainMenu
