@@ -25,10 +25,14 @@ using UnityEngine;
 
 public class CameraControl3DLERP : MonoBehaviour
 {
-    public Transform target; // Drag player here
+    private Transform target; // Drag player here
     public float smoothSpeed = 10f;
     public Vector3 baseOffset; // Your normal camera offset at player scale = 1
     public float distanceFactor = 2f; // Tweak this for how much further to go when player scales up
+
+    void Start () {
+        target = GameObject.FindWithTag("Player").transform;
+    }
 
     void FixedUpdate()
     {

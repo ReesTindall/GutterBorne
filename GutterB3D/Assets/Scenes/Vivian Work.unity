@@ -277,6 +277,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!4 &1093265812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3798111099364686831, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+  m_PrefabInstance: {fileID: 8887488562012512586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945606556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
@@ -773,6 +778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingWalls
       objectReference: {fileID: 0}
+    - target: {fileID: 8601037064803886457, guid: 2eae8dc660e0042a69bb364bbf972a1d, type: 3}
+      propertyPath: groundPrefab
+      value: 
+      objectReference: {fileID: 278532642}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,6 +799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1283812381788311806, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1093265812}
     - target: {fileID: 4315548918941833516, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: dampingDrag
       value: 3

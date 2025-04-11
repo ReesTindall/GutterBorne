@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8748299806518174636}
   - component: {fileID: 6482688923702500369}
   - component: {fileID: 1671252892123315700}
+  - component: {fileID: 1128738811712073594}
   m_Layer: 0
   m_Name: banana
   m_TagString: Food
@@ -64,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 1461947955086763152}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &6482688923702500369
 CapsuleCollider:
@@ -103,6 +104,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   isAbsorbed: 0
+--- !u!114 &1128738811712073594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749128721214738845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb685f64bd1c4634a5947ad0c062c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedS: 2.5
+  distS: 0.5
+  SinWaveMove: 0
 --- !u!1001 &4004625445436444924
 PrefabInstance:
   m_ObjectHideFlags: 0

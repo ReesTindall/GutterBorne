@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1447327700289289888}
   - component: {fileID: 1273770488722631723}
   - component: {fileID: 1543745123622432174}
+  - component: {fileID: 6532143126209219794}
   m_Layer: 0
   m_Name: Food_OBJ
   m_TagString: Food
@@ -69,6 +70,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   isAbsorbed: 0
+--- !u!114 &6532143126209219794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903925339087809074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb685f64bd1c4634a5947ad0c062c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedS: 2.5
+  distS: 0.5
+  SinWaveMove: 0
 --- !u!1001 &5530700060799719736
 PrefabInstance:
   m_ObjectHideFlags: 0
