@@ -79,7 +79,7 @@ Material:
     m_Colors:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _TintColor: {r: 0.3962264, g: 0.38684592, b: 0.16634032, a: 1}
+    - _TintColor: {r: 0.048089504, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1748688521998277390
 MonoBehaviour:
