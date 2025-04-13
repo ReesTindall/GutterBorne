@@ -29,7 +29,7 @@ public class PickupUpDown : MonoBehaviour{
       void Update (){
             //use Mathf.Sin function to move up and down
             if (SinWaveMove == true){
-                  transform.localPosition = parent.gameObject.transform.position + new Vector3(0.0f, (Mathf.Sin(Time.time * speedS) * distS), 0.0f);
+                  // transform.localPosition = parent.gameObject.transform.position + new Vector3(0.0f, (Mathf.Sin(Time.time * speedS) * distS), 0.0f);
             }
       }
 }
