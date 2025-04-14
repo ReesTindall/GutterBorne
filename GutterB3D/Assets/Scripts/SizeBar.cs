@@ -9,6 +9,7 @@ public class SizeBar : MonoBehaviour
 
    [SerializeField] private Gradient gradient;
    [SerializeField] private Image image;
+   [SerializeField] private Text text;
 
    public void SetMaxSize(float max) {
       maxSize = max;
@@ -27,6 +28,7 @@ public class SizeBar : MonoBehaviour
          //change color gradient
          Color newColor = gradient.Evaluate(newFill);
          image.color = newColor;
+         text.color = newColor;
          Debug.Log("new color: " + newFill);
       }
    }
