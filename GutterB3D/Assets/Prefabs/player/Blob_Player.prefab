@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7801398385845368426}
   - component: {fileID: 690033680323820494}
   - component: {fileID: 1283812381788311806}
+  - component: {fileID: 4381808744749081758}
   m_Layer: 0
   m_Name: Blob_Player
   m_TagString: Player
@@ -318,6 +319,21 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
   projectileSpeed: 10
   attackRate: 2
+--- !u!114 &4381808744749081758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219158198346048604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0f2c66701a04416833d9f30d1457fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  divineCounter: {fileID: 0}
+  absorptionSound: {fileID: 0}
+  mixerGroup: {fileID: 0}
 --- !u!1 &889016841658014846
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,24 +19,12 @@ public class SlimeSizeBar : MonoBehaviour
 
      void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Food")){
+        if(other.CompareTag("Food")){
             SetSize(1f);
-            if(slimeSize != null) {
-                Debug.Log("New size: " + slimeSize);
-            } else {
-                Debug.Log("slimesize is null");
-            } 
         }  
-        
 
-        if (other.CompareTag("Enemy")) {
+        if(other.CompareTag("Enemy")){
             SetSize(-1f);
-            if(slimeSize != null) {
-                Debug.Log("New size: " + slimeSize);
-            } else {
-                Debug.Log("slimesize is null");
-            }  
-            
         }
     }
 
