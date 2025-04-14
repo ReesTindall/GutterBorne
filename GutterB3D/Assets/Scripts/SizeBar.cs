@@ -22,9 +22,12 @@ public class SizeBar : MonoBehaviour
          float newFill= slimeSize / maxSize;
          image.fillAmount = newFill;
 
+         Debug.Log("new fill: " + newFill);
+
          //change color gradient
          Color newColor = gradient.Evaluate(newFill);
          image.color = newColor;
+         Debug.Log("new color: " + newFill);
       }
    }
 }

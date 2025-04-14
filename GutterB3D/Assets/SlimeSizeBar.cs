@@ -21,11 +21,22 @@ public class SlimeSizeBar : MonoBehaviour
     {
         if (other.CompareTag("Food")){
             SetSize(1f);
+            if(slimeSize != null) {
+                Debug.Log("New size: " + slimeSize);
+            } else {
+                Debug.Log("slimesize is null");
+            } 
         }  
         
 
         if (other.CompareTag("Enemy")) {
-                SetSize(-1f);
+            SetSize(-1f);
+            if(slimeSize != null) {
+                Debug.Log("New size: " + slimeSize);
+            } else {
+                Debug.Log("slimesize is null");
+            }  
+            
         }
     }
 
