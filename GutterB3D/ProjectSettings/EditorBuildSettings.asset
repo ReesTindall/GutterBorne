@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level 1 - Sewer 1.unity
     guid: 2a9baca1774a0406c816712c0ca7e02a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 2 - Alley.unity
     guid: bf9c9c2bc035349c2a4d7aa99881286d
   - enabled: 0
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: da8972525e6e948ffbf48a323d6e8bb0
   m_configObjects: {}

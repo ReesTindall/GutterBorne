@@ -7,8 +7,8 @@ public class EnterGrate : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Entrance")) {
-            int nextSceneIdx = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(nextSceneIdx);
+            int nextSceneIdx = SceneManager.GetActiveScene().buildIndex - 1;
+            SceneManager.LoadScene("Level " + nextSceneIdx);
         }
     }
 }
