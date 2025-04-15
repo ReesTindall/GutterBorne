@@ -1084,10 +1084,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1194389589545996619, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.007
+      objectReference: {fileID: 0}
     - target: {fileID: 4381808744749081758, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: divineCounter
       value: 
       objectReference: {fileID: 1460893698}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 8867
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.012584686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.23520796
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.86969215
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942930726293748236, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8877427860083156673, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_RootOrder
       value: 6

@@ -596,7 +596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270726797728534626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0, z: 0.203}
+  m_LocalPosition: {x: -0.007, y: 0, z: 0.203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -654,8 +654,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.01644516
-        value: 0.19696265
+        time: 0.012584686
+        value: 0.86969215
         inSlope: 0.49357125
         outSlope: 0.49357125
         tangentMode: 0
@@ -663,8 +663,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.39986876
       - serializedVersion: 3
-        time: 0.24678938
-        value: 0.25922838
+        time: 0.23520796
+        value: 1
         inSlope: 0.07078088
         outSlope: 0.07078088
         tangentMode: 0
@@ -686,7 +686,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.18039216, g: 0.28235295, b: 0.13725491, a: 0}
-      key1: {r: 0.52002877, g: 0.62343556, b: 0.41671762, a: 0.99633855}
+      key1: {r: 0.52002877, g: 0.62343556, b: 0.41671762, a: 0.5686275}
       key2: {r: 0.15755948, g: 0.66120976, b: 0.26107842, a: 0.9705882}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -702,7 +702,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 6168
+      atime1: 8867
       atime2: 52235
       atime3: 65535
       atime4: 0
