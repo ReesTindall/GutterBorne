@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0040ec20e8841e5bbbbf6abdf27337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slimeSize: 1
+  maxSize: 100
 --- !u!114 &6231780361693056799
 MonoBehaviour:
   m_ObjectHideFlags: 0
