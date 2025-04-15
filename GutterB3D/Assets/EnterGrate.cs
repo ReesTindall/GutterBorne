@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnterGrate : MonoBehaviour
 {
+    [SerializeField] DivineSlimeCounter counter;
+
     void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Entrance")) {
+        float divineRatio = counter.currDivineSlime / counter.totalDivineSlime;
+
+        if(other.CompareTag("Entrance") && divineRatio == 1f) {
             int nextSceneIdx = SceneManager.GetActiveScene().buildIndex - 1;
             SceneManager.LoadScene("Level " + nextSceneIdx);
         }
