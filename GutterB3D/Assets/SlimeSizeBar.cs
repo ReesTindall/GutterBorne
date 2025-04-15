@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SlimeSizeBar : MonoBehaviour
 {
-    public float slimeSize, maxSize;
-
     [SerializeField] private SizeBar sizeBar;
 
     void Start() {
+        float slimeSize = GameHandler.handler.slimeSize;
+        float maxSize = GameHandler.handler.maxSize;
+
           if (sizeBar != null) {
-            sizeBar.SetMaxSize(maxSize);
-            sizeBar.SetSize(slimeSize);
+            float initialSize = GameHandler.handler.slimeSize;
+            sizeBar.SetSize(initialSize / GameHandler.handler.maxSize);
         } else {
             Debug.LogError("SizeBar reference missing");
         }
@@ -29,8 +30,10 @@ public class SlimeSizeBar : MonoBehaviour
     }
 
     void SetSize(float sizeChange) {
-        slimeSize += sizeChange;
-        slimeSize = Mathf.Clamp(slimeSize, 0, maxSize); //will not go past range
-        sizeBar.SetSize(slimeSize); //updates UI size bar
+        GameHandler.handler.slimeSize += sizeChange;
+        GameHandler.handler.slimeSize = Mathf.Clamp(GameHandler.handler.slimeSize, 0, GameHandler.handler.maxSize); //will not go past range
+        
+        float newRatio = GameHandler.handler.slimeSize / GameHandler.handler.maxSize;
+        sizeBar.SetSize(newRatio); //updates UI size bar
     }
 }

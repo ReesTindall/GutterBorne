@@ -92,10 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07b9e8a65c76442c8879e87f7eb9434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeSize: 10
-  maxSize: 100
-  width: 60
-  height: 300
   gradient:
     serializedVersion: 2
     key0: {r: 0.37962934, g: 0.735849, b: 0.19090424, a: 1}
@@ -196,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 28bd5da9e71804475b66fc14d15ba6b4, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -350,12 +346,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dbe6aad20eb58451ea259d54bcf4b78d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9af6e127e8de49e5ae7ee73cc0ed810, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

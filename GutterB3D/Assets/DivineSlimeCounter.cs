@@ -26,20 +26,20 @@ public class DivineSlimeCounter : MonoBehaviour
     }
 
     public void setSlime() {
-        Debug.Log("curr slime:" + currDivineSlime);
+        // Debug.Log("curr slime:" + currDivineSlime);
 
         currDivineSlime += slime;
         currDivineSlime = Mathf.Clamp(currDivineSlime, 0, totalDivineSlime); //will not go past range
-        Debug.Log("new slime:" + currDivineSlime);
+        // Debug.Log("new slime:" + currDivineSlime);
 
         string newCount = currDivineSlime.ToString() + "/" + totalDivineSlime.ToString();
-        Debug.Log("new count: " + newCount);
+        // Debug.Log("new count: " + newCount);
         setCounter(newCount);
     }
 
     void setCounter(string count) {
         counter.text = count;
-        Debug.Log("counter text: " + counter.text);
+        // Debug.Log("counter text: " + counter.text);
     }
 
 }

@@ -6,8 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
-    public void StartGame() {
-            SceneManager.LoadScene("SampleScene");
+      public static GameHandler handler;
+
+      public float slimeSize = 1f;
+      public float maxSize = 100f;
+
+      //checks to make sure there is only one game handler in scene
+      void Awake() {
+            if(handler == null) {
+                  handler = this;
+                  DontDestroyOnLoad(gameObject);
+            } else {
+                  Destroy(gameObject);
+            }
+      }
+
+      public void StartGame() {
+            SceneManager.LoadScene("Level 1 - Sewer");
       }
 
       // Return to MainMenu

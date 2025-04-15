@@ -34,13 +34,13 @@ public class DivineSlime : MonoBehaviour
                 audioSource.outputAudioMixerGroup = mixerGroup;
                 audioSource.PlayOneShot(absorptionSound);
             }
+            Destroy(other.gameObject);
         }
     } 
 
     void OnTriggerExit(Collider other) {
         if (other.CompareTag("DivineSlime")) {
             hasCollided = false;
-            Destroy(other.gameObject);
         }
     }
 }
