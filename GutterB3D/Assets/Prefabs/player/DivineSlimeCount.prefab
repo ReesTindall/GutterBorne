@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 4366227719822801764}
-  totalDivineSlime: 4
+  totalDivineSlime: 0
 --- !u!1 &6016065314151897926
 GameObject:
   m_ObjectHideFlags: 0

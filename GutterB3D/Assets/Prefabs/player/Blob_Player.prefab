@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 690033680323820494}
   - component: {fileID: 1283812381788311806}
   - component: {fileID: 4381808744749081758}
+  - component: {fileID: 924104200864097822}
   m_Layer: 0
   m_Name: Blob_Player
   m_TagString: Player
@@ -266,9 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de8938cbedfb4f9da55515deb3b9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeSize: 45
-  maxSize: 100
-  sizeBar: {fileID: 3071227705966838120, guid: 7b09d5369f34d4188a691b9557da057d, type: 3}
+  sizeBar: {fileID: 0}
 --- !u!114 &7801398385845368426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +333,18 @@ MonoBehaviour:
   divineCounter: {fileID: 0}
   absorptionSound: {fileID: 0}
   mixerGroup: {fileID: 0}
+--- !u!114 &924104200864097822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219158198346048604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660b67acf0c864ad09129b062055fe0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &889016841658014846
 GameObject:
   m_ObjectHideFlags: 0
