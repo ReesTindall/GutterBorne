@@ -15,9 +15,14 @@ public class VolumeSettings : MonoBehaviour
     public const string SFX = "VolumeSFX";
 
     void Awake() {
-        musicSlider.onValueChanged.AddListener(SetVolumeMusic);
-        sfxSlider.onValueChanged.AddListener(SetVolumeSFX);
-    }
+    if (musicSlider == null)
+        Debug.LogError("musicSlider is not assigned!");
+    if (sfxSlider == null)
+        Debug.LogError("sfxSlider is not assigned!");
+
+    musicSlider.onValueChanged.AddListener(SetVolumeMusic);
+    sfxSlider.onValueChanged.AddListener(SetVolumeSFX);
+}
 
     void Start() {
   
