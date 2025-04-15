@@ -884,17 +884,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4281139934272470702, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
   m_PrefabInstance: {fileID: 4062514364003396218}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1738612069 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
-  m_PrefabInstance: {fileID: 138887853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0040ec20e8841e5bbbbf6abdf27337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4062514364003396218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -906,11 +895,19 @@ PrefabInstance:
     - target: {fileID: 2719990164790167991, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1738612069}
+      objectReference: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
+    - target: {fileID: 2719990164790167991, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 5485944964498728947, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1738612069}
+      objectReference: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
+    - target: {fileID: 5485944964498728947, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6670302518816185647, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1002,7 +999,11 @@ PrefabInstance:
     - target: {fileID: 8289763265186409930, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1738612069}
+      objectReference: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
+    - target: {fileID: 8289763265186409930, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Options
+      objectReference: {fileID: 0}
     - target: {fileID: 8733967530146200472, guid: e4610e82255ed4ef8945b67f5461048c, type: 3}
       propertyPath: m_IsActive
       value: 0
