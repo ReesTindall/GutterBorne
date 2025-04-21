@@ -20,8 +20,8 @@ GameObject:
   - component: {fileID: 7801398385845368426}
   - component: {fileID: 690033680323820494}
   - component: {fileID: 1283812381788311806}
-  - component: {fileID: 4381808744749081758}
   - component: {fileID: 924104200864097822}
+  - component: {fileID: 1961207536670326959}
   m_Layer: 0
   m_Name: Blob_Player
   m_TagString: Player
@@ -49,7 +49,7 @@ Transform:
   - {fileID: 5969062672026714537}
   - {fileID: 1194389589545996619}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &358577125947728972
 BoxCollider:
@@ -318,21 +318,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
   projectileSpeed: 10
   attackRate: 2
---- !u!114 &4381808744749081758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219158198346048604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a0f2c66701a04416833d9f30d1457fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  divineCounter: {fileID: 0}
-  absorptionSound: {fileID: 8300000, guid: f9d0c045149194ae28c32e1dc0a7a6b9, type: 3}
-  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
 --- !u!114 &924104200864097822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +330,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b67acf0c864ad09129b062055fe0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+--- !u!114 &1961207536670326959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219158198346048604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b1ec42debc547739eb247f64c1ce91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashCounter: {fileID: 0}
+  absorptionSound: {fileID: 0}
+  mixerGroup: {fileID: 0}
 --- !u!1 &889016841658014846
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - DivineSlime
   - Entrance
+  - Banana
+  - Paper
+  - Cup
+  - Gum
   layers:
   - Default
   - TransparentFX
