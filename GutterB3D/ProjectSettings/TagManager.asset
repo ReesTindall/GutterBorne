@@ -13,6 +13,10 @@ TagManager:
   - Paper
   - Cup
   - Gum
+  - forward
+  - LR
+  - jump
+  - listen2rat
   layers:
   - Default
   - TransparentFX

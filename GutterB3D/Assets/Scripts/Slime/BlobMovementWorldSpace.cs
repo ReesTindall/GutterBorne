@@ -33,7 +33,8 @@ public class BlobMovementWorldSpace : MonoBehaviour
         input = new Vector3(h, 0, v);
         //input = new Vector3(h, 0, 0);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded()){
+        // if (Input.GetButtonDown("Jump") && IsGrounded()){
+        if (Input.GetButtonDown("Jump")){
             jump = true;
         }
     }
@@ -82,8 +83,8 @@ public class BlobMovementWorldSpace : MonoBehaviour
 
     }
 
-    private bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
-    }
+    // private bool IsGrounded()
+    // {
+    //     return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+    // }
 }
