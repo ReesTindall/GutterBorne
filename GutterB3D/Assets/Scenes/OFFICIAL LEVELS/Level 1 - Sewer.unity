@@ -535,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6749128721214738845, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6749128721214738845, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_TagString
@@ -1405,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748299806518174636, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8
+      value: -2.27
       objectReference: {fileID: 0}
     - target: {fileID: 8748299806518174636, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1413,7 +1413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748299806518174636, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.12
+      value: -11.46
       objectReference: {fileID: 0}
     - target: {fileID: 8748299806518174636, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4617,7 +4617,7 @@ PrefabInstance:
     - target: {fileID: 340731367688700402, guid: e51e3ad86342d44268f6d157b827e18c, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
+      objectReference: {fileID: 12800000, guid: 28bd5da9e71804475b66fc14d15ba6b4, type: 3}
     - target: {fileID: 340731367688700402, guid: e51e3ad86342d44268f6d157b827e18c, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
@@ -5055,9 +5055,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1189516910}
     m_Modifications:
     - target: {fileID: 16396976024550467, guid: 906c59a8d376f4f8e9f607d786cba6e6, type: 3}
+      propertyPath: m_Text
+      value: Give this friendly rat high-five to hear his words of wisdom.
+      objectReference: {fileID: 0}
+    - target: {fileID: 16396976024550467, guid: 906c59a8d376f4f8e9f607d786cba6e6, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
+      objectReference: {fileID: 12800000, guid: 28bd5da9e71804475b66fc14d15ba6b4, type: 3}
     - target: {fileID: 16396976024550467, guid: 906c59a8d376f4f8e9f607d786cba6e6, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
@@ -5080,7 +5084,7 @@ PrefabInstance:
       objectReference: {fileID: 701262332}
     - target: {fileID: 4388541977693719283, guid: 906c59a8d376f4f8e9f607d786cba6e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4388541977693719283, guid: 906c59a8d376f4f8e9f607d786cba6e6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5195,6 +5199,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1189516910}
     m_Modifications:
     - target: {fileID: 2314981814701693220, guid: 15d32a0251a914b98bb123b25746c7f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314981814701693220, guid: 15d32a0251a914b98bb123b25746c7f4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -5302,6 +5310,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Press the space bar to jump into this sewer pipe!
       objectReference: {fileID: 0}
+    - target: {fileID: 8032681892270352863, guid: 15d32a0251a914b98bb123b25746c7f4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 28bd5da9e71804475b66fc14d15ba6b4, type: 3}
     - target: {fileID: 8810297559941223931, guid: 15d32a0251a914b98bb123b25746c7f4, type: 3}
       propertyPath: m_IgnoreReversedGraphics
       value: 0
@@ -5326,7 +5338,7 @@ PrefabInstance:
     - target: {fileID: 3432323715614513184, guid: 8942381ceef6a48f8b56866c93db059a, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
+      objectReference: {fileID: 12800000, guid: 28bd5da9e71804475b66fc14d15ba6b4, type: 3}
     - target: {fileID: 3432323715614513184, guid: 8942381ceef6a48f8b56866c93db059a, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
