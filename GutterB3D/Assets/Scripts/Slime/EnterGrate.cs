@@ -1,14 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class EnterGrate : MonoBehaviour
 {
     [SerializeField] TrashCounter counter;
+    [SerializeField] string cutsceneSceneName = "Sewer_Cutscene1";
 
-    void OnTriggerEnter(Collider other) {
-        if(counter != null) {
+    private bool hasEntered = false;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (hasEntered) return;
+
+        if (counter != null)
+        {
             float bananaRatio = counter.currBanana / counter.totalBanana;
             float gumRatio = counter.currGum / counter.totalGum;
             float cupRatio = counter.currCup / counter.totalCup;
@@ -16,13 +22,15 @@ public class EnterGrate : MonoBehaviour
 
             float trashRatio = bananaRatio / gumRatio / cupRatio / paperRatio;
 
-            if(other.CompareTag("Entrance") && trashRatio == 1f) {
-                int nextSceneIdx = SceneManager.GetActiveScene().buildIndex - 1;
-                SceneManager.LoadScene("Level " + nextSceneIdx);
+            if (other.CompareTag("Entrance") && trashRatio == 1f)
+            {
+                hasEntered = true;
+                SceneManager.LoadScene(cutsceneSceneName);
+            }
         }
-        } else {
+        else
+        {
             Debug.Log("Slime player is missing reference to Trash Counter on EnterGrate.cs!");
         }
-        
     }
 }

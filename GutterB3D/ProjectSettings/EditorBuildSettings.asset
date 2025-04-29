@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Madda Work/Level 2 - Alley.unity
     guid: bf9c9c2bc035349c2a4d7aa99881286d
+  - enabled: 1
+    path: Assets/Scenes/Evren Work/Sewer_Cutscene1.unity
+    guid: 60541268573fc4e4f834b057bb6459bc
   m_configObjects: {}
