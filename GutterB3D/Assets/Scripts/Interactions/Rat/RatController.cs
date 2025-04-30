@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour
 {
-    [Header("Ground Snap")]
-    public Transform groundCheck;
-    public float groundOffset = 0.1f;
-
     [Header("Chase & Attack")]
     public float chaseSpeed      = 4f;
     public float chaseRange      = 10f;
@@ -21,28 +17,26 @@ public class RatController : MonoBehaviour
     private float lastAttackTime;
     private bool hasSniffed;
     private bool isSniffing;
+    private float fixedY;
 
     void Start()
     {
-        var ply = GameObject.FindGameObjectWithTag("Player");
+        var ply = GameObject.FindWithTag("Player");
         if (ply != null) player = ply.transform;
-        anim   = GetComponentInChildren<Animator>();
+
+        anim = GetComponentInChildren<Animator>();
+
+        // store the starting Y so we never change it
+        fixedY = transform.position.y;
     }
 
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(groundCheck.position, Vector3.down, out hit, 1f))
-        {
-            var pos = transform.position;
-            pos.y = hit.point.y + groundOffset;
-            transform.position = pos;
-        }
-
         if (player == null) return;
+
         float dist = Vector3.Distance(transform.position, player.position);
 
-        // 2) Sniff once when player enters range
+        // 1) Sniff once on first detection
         if (!hasSniffed)
         {
             if (dist <= chaseRange)
@@ -52,33 +46,44 @@ public class RatController : MonoBehaviour
             return;
         }
 
-        // 3) If currently sniffing, freeze
+        // 2) If sniffing, hold still
         if (isSniffing)
         {
             anim.SetFloat("Speed", 0f);
             return;
         }
 
-        // 4) Chase vs Attack
+        // 3) Chase
         if (dist > attackRange)
         {
-            // chase
-            Vector3 dir = (player.position - transform.position).normalized;
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                Quaternion.LookRotation(dir),
-                Time.deltaTime * chaseSpeed
-            );
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                player.position,
+            // a) Compute horizontal-only direction (X axis)
+            float deltaX = player.position.x - transform.position.x;
+            Vector3 dir = new Vector3(deltaX, 0f, 0f).normalized;
+
+            // b) Rotate to face the blob along X
+            if (dir.x != 0f)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(dir);
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    Quaternion.Euler(0f, targetRot.eulerAngles.y, 0f),
+                    Time.deltaTime * chaseSpeed
+                );
+            }
+
+            // c) Slide along X
+            float newX = Mathf.MoveTowards(
+                transform.position.x,
+                player.position.x,
                 chaseSpeed * Time.deltaTime
             );
+            transform.position = new Vector3(newX, fixedY, transform.position.z);
+
             anim.SetFloat("Speed", chaseSpeed);
         }
+        // 4) Attack
         else
         {
-            // attack
             anim.SetFloat("Speed", 0f);
             if (Time.time - lastAttackTime >= attackCooldown)
             {
@@ -94,25 +99,24 @@ public class RatController : MonoBehaviour
         isSniffing = true;
 
         anim.SetFloat("Speed", 0f);
-        anim.SetBool("Sniff", true);   
-        Debug.Log("This fucker should be sniffing");       // start sniff
+        anim.SetBool("Sniff", true);
         yield return new WaitForSeconds(sniffDuration);
-        anim.SetBool("Sniff", false);         // reset sniff
+        anim.SetBool("Sniff", false);
+
         isSniffing = false;
     }
 
     void DoAttack()
     {
-        anim.SetBool("Attack", true);         // start attack
-        Debug.Log("Rat attacks slime!");
+        anim.SetBool("Attack", true);
         StartCoroutine(ResetAttackFlag());
-        // TODO: player.GetComponent<SlimeHealth>()?.TakeDamage(1);
+        Debug.Log("Rat attacks slime!");
+        // TODO: apply damage to player here
     }
 
     IEnumerator ResetAttackFlag()
     {
-        // allow one frame (or tweak delay to match your clip length)
-        yield return null;
-        anim.SetBool("Attack", false);        // reset attack
+        yield return null;                // let Animator see the true value for one frame
+        anim.SetBool("Attack", false);
     }
 }
