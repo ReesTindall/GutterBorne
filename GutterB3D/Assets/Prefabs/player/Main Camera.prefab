@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ec5a27e34664cc6b47048213de2d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   smoothSpeed: 10
-  baseOffset: {x: 0, y: 0.5, z: -1.4}
+  baseOffset: {x: 0, y: 0.3, z: -1.4}
   distanceFactor: 1.2

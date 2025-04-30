@@ -221,11 +221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8273506427401717412, guid: 3a0cbbb8f00874169872df94faacc878, type: 3}
   m_PrefabInstance: {fileID: 2168855026850978708}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &502732516 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8877427860083156673, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
-  m_PrefabInstance: {fileID: 8887488562012512586}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &512343595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: d126e3efb6e7d47b7826afa2eb1ef9e1, type: 3}
@@ -816,10 +811,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 6209422079932093625, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 502732516}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
