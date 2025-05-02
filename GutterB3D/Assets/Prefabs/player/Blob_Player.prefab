@@ -52,7 +52,7 @@ Transform:
   - {fileID: 5969062672026714537}
   - {fileID: 1194389589545996619}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &358577125947728972
 BoxCollider:
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashCounter: {fileID: 0}
-  absorptionSound: {fileID: 0}
-  mixerGroup: {fileID: 0}
+  absorptionSound: {fileID: 8300000, guid: 4da210a4dd4af493c874c5bf877dee96, type: 3}
+  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
 --- !u!143 &665723373941132649
 CharacterController:
   m_ObjectHideFlags: 0

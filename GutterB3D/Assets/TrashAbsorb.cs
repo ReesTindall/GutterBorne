@@ -34,6 +34,7 @@ public class TrashAbsorb : MonoBehaviour
                 {
                     audioSource.outputAudioMixerGroup = mixerGroup;
                     audioSource.PlayOneShot(absorptionSound);
+                    Debug.Log("playing sfx");
                 }
                 Destroy(other.gameObject);
             }
@@ -47,6 +48,7 @@ public class TrashAbsorb : MonoBehaviour
                 {
                     audioSource.outputAudioMixerGroup = mixerGroup;
                     audioSource.PlayOneShot(absorptionSound);
+                    Debug.Log("playing sfx");
                 }
                 Destroy(other.gameObject);
             }
@@ -60,6 +62,7 @@ public class TrashAbsorb : MonoBehaviour
                 {
                     audioSource.outputAudioMixerGroup = mixerGroup;
                     audioSource.PlayOneShot(absorptionSound);
+                    Debug.Log("playing sfx");
                 }
                 Destroy(other.gameObject);
             }
@@ -73,6 +76,7 @@ public class TrashAbsorb : MonoBehaviour
                 {
                     audioSource.outputAudioMixerGroup = mixerGroup;
                     audioSource.PlayOneShot(absorptionSound);
+                    Debug.Log("playing sfx");
                 }
                     Destroy(other.gameObject);
             }
