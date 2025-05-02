@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593438493365991891, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1593438493365991891, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.y
@@ -24,13 +24,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 28.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5555320385227382104, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5838b0b087a1c40588db6d7455f16688, type: 2}
+    - target: {fileID: 5901167317771658679, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5838b0b087a1c40588db6d7455f16688, type: 2}
     - target: {fileID: 6337648027811739632, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_Name
-      value: Walls (1) Variant
+      value: alley walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337648027811739632, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_TagString
+      value: SolidWorld
       objectReference: {fileID: 0}
     - target: {fileID: 7743851158675275073, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7743851158675275073, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.y
@@ -50,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188040796180491221, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0037767887
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8188040796180491221, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalPosition.y
