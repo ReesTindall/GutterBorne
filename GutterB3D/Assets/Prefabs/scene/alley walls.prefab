@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 577744372718424630, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1593438493365991891, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -32,13 +36,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5838b0b087a1c40588db6d7455f16688, type: 2}
+    - target: {fileID: 5921408704134793875, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6337648027811739632, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_Name
       value: alley walls
       objectReference: {fileID: 0}
     - target: {fileID: 6337648027811739632, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337648027811739632, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_TagString
-      value: SolidWorld
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7743851158675275073, guid: da788acbcd9ee448c931dc74c462b0ea, type: 3}
       propertyPath: m_LocalScale.x

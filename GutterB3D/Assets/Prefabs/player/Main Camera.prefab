@@ -151,5 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSpeed: 10
-  baseOffset: {x: 0, y: 0.3, z: -1.4}
-  distanceFactor: 1.2
+  viewAngleDegrees: 10
+  baseDistance: 1.5
+  heightOffset: 0.1
+  distanceScaleFactor: 1.1
+  environmentMask:
+    serializedVersion: 2
+    m_Bits: 129
+  collisionBuffer: 0.3
+  sphereCastRadius: 0.3
