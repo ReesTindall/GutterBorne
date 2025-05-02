@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_LocalScale.x
@@ -71,11 +71,15 @@ PrefabInstance:
     - target: {fileID: -6902573867230041995, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6ac1bdd12e2fb41a5a52be4938d03957, type: 2}
+      objectReference: {fileID: 2100000, guid: 070b8022e582a48569dbc40fb808fc88, type: 2}
+    - target: {fileID: -4041641714634873723, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4041641714634873723, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5d61d5196fe82441dac74239f5438c19, type: 2}
+      objectReference: {fileID: 2100000, guid: c49d607f7156d45d682e61ded2020d9f, type: 2}
     - target: {fileID: 919132149155446097, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_Name
       value: street_lamp_NIGHT
@@ -83,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 8089062573417005363, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6ac1bdd12e2fb41a5a52be4938d03957, type: 2}
+      objectReference: {fileID: 2100000, guid: 070b8022e582a48569dbc40fb808fc88, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: c9029af7c715e4cd3bc299183df8d7d1, type: 3}

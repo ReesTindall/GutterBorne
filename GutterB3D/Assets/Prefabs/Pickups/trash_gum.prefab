@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4a3fd21f0e0ca4f85ad59900fb909a88, type: 2}
     - target: {fileID: -8679921383154817045, guid: 4add5719cc66c4a4e8197163478185a7, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4add5719cc66c4a4e8197163478185a7, type: 3}
       propertyPath: m_LocalScale.x
@@ -116,7 +116,7 @@ PrefabInstance:
       addedObject: {fileID: -125001760134463355}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4add5719cc66c4a4e8197163478185a7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6323861227056057466}
+      addedObject: {fileID: 3962908972160552915}
   m_SourcePrefab: {fileID: 100100000, guid: 4add5719cc66c4a4e8197163478185a7, type: 3}
 --- !u!1 &6450928126857410829 stripped
 GameObject:
@@ -157,11 +157,11 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6323861227056057466
+--- !u!54 &3962908972160552915
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,4 +187,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
