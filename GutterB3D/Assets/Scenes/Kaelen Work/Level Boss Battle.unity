@@ -2011,19 +2011,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: totalCup
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: totalGum
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: totalPaper
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: totalBanana
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8464428761254936817, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: m_Pivot.x
