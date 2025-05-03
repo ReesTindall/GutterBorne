@@ -54,11 +54,11 @@ void OnTriggerEnter(Collider other)
     if (prefabToSpawn != null)
     {
         // Play absorption sound
-        if (absorptionSound != null)
-        {
-            audioSource.outputAudioMixerGroup = mixerGroup;
-            audioSource.PlayOneShot(absorptionSound);
-        }
+        // if (absorptionSound != null)
+        // {
+        //     audioSource.outputAudioMixerGroup = mixerGroup;
+        //     audioSource.PlayOneShot(absorptionSound);
+        // }
 
         // Grow and speed up
         transform.localScale *= sizeIncrease;
@@ -72,6 +72,7 @@ void OnTriggerEnter(Collider other)
         myFood.Add(newTrash);
         myFoodIndex++;
         FoodSizer();
+
 
         // Mark original as absorbed (optional, or destroy it)
         MoveFood foodMovement = other.GetComponent<MoveFood>();
@@ -128,16 +129,49 @@ void OnTriggerEnter(Collider other)
     //         Destroy(other.gameObject);
     //     }
     // }
+void FoodSizer(){
+    float slimeSize = transform.localScale.x; // assuming uniform scale
+    float foodSizeFactor = 0.03f; 
 
-    void FoodSizer(){
-        Vector3 blobDivider = this.gameObject.transform.localScale; 
-        for (int i = 0; i < myFood.Count; i++){
-            myFood[i].transform.localScale = new Vector3(
-                0.5f / blobDivider.x,
-                0.5f / blobDivider.y,
-                0.5f / blobDivider.z);
-        }
+    Vector3 targetScale = Vector3.one * (slimeSize * foodSizeFactor);
+
+    for (int i = 0; i < myFood.Count; i++) {
+        SetGlobalScale(myFood[i].transform, targetScale);
     }
+}
+
+void SetGlobalScale(Transform obj, Vector3 targetScale)
+{
+    obj.localScale = Vector3.one;
+    Vector3 parentScale = obj.parent != null ? obj.parent.lossyScale : Vector3.one;
+    obj.localScale = new Vector3(
+        targetScale.x / parentScale.x,
+        targetScale.y / parentScale.y,
+        targetScale.z / parentScale.z
+    );
+}
+
+//     void FoodSizer(){
+//         Vector3 blobDivider = this.gameObject.transform.localScale; 
+//         for (int i = 0; i < myFood.Count; i++){
+//             myFood[i].transform.localScale = new Vector3(
+//                 0.5f / blobDivider.x,
+//                 0.5f / blobDivider.y,
+//                 0.5f / blobDivider.z);
+//         }
+//     }
+
+
+// void SetGlobalScale(Transform obj, Vector3 targetScale)
+// {
+//     obj.localScale = Vector3.one;
+//     Vector3 parentScale = obj.parent != null ? obj.parent.lossyScale : Vector3.one;
+//     obj.localScale = new Vector3(
+//         targetScale.x / parentScale.x,
+//         targetScale.y / parentScale.y,
+//         targetScale.z / parentScale.z
+//     );
+// }
 
     // void FoodPosition(Transform food){
     //     float blobBellySize = this.gameObject.transform.localScale.x / 4;
