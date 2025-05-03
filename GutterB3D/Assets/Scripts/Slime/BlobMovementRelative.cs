@@ -24,7 +24,8 @@ public class BlobMovementRelative : MonoBehaviour
         // Get input and move slime relative to its own forward
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * h + transform.forward * v;
+        //Vector3 move = transform.right * h + transform.forward * v;
+        Vector3 move = transform.forward * v;
         controller.SimpleMove(move * moveSpeed);
     }
 }

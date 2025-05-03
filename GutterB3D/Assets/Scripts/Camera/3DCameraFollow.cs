@@ -37,7 +37,6 @@
 //         //transform.LookAt (target);
 //     }
 // }
-
 using UnityEngine;
 
 public class CameraControlAngleFollow : MonoBehaviour
@@ -74,7 +73,10 @@ public class CameraControlAngleFollow : MonoBehaviour
         float zOffset = Mathf.Cos(angleRad) * scaledDistance;
 
         Vector3 localOffset = new Vector3(0, yOffset, -zOffset);
-        Vector3 worldOffset = target.rotation * localOffset;
+
+        // ✅ FIX: Only use the slime's Y rotation to prevent over-rotation
+        Quaternion rotationY = Quaternion.Euler(0, target.eulerAngles.y, 0);
+        Vector3 worldOffset = rotationY * localOffset;
 
         Vector3 desiredCameraPos = target.position + worldOffset;
         Vector3 lookTarget = target.position + Vector3.up * heightOffset * scale;
@@ -97,3 +99,4 @@ public class CameraControlAngleFollow : MonoBehaviour
         transform.LookAt(lookTarget);
     }
 }
+
