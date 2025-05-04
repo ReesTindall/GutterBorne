@@ -11,12 +11,12 @@ public class RatController : MonoBehaviour
     bool    patrolPointSet;
 
     [Header("Detection / Movement")]
-    public float chaseSpeed   = 4f;
+    public float chaseSpeed   = 2f;
     public float chaseRange   = 10f;
     public float attackRange  = 1.5f;
 
     [Header("Attack")]
-    public float attackCooldown = 1f;   // seconds between bites
+    public float attackCooldown = 3f;   // seconds between bites
 
     [Header("Sniff Telegraph")]
     public float sniffDuration  = 0.8f; // length of sniff clip

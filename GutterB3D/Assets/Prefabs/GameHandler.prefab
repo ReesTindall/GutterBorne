@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1390110586345719521}
   - component: {fileID: 3205688660136041385}
-  - component: {fileID: 6231780361693056799}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: GameHandler
@@ -45,23 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0040ec20e8841e5bbbbf6abdf27337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeSize: 1
   maxSize: 100
---- !u!114 &6231780361693056799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8532999526891086129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80c9ed135bba4c2eb6830b4efda927d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InventoryMenu: {fileID: 0}
-  InvIsOpen: 0
-  item1image: {fileID: 0}
-  item2image: {fileID: 0}
-  item1Text: {fileID: 0}
-  item2Text: {fileID: 0}

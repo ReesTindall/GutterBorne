@@ -6,13 +6,19 @@ public class SlimeSizeBar : MonoBehaviour
 {
     [SerializeField] private SizeBar sizeBar;
 
+	private GameHandler handler;
+
+	void Awake (){
+		handler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+	}
+
     void Start() {
-        float slimeSize = GameHandler.handler.slimeSize;
-        float maxSize = GameHandler.handler.maxSize;
+        float slimeSize = GameHandler.slimeSize;
+        float maxSize = handler.maxSize;
 
           if (sizeBar != null) {
-            float initialSize = GameHandler.handler.slimeSize;
-            sizeBar.SetSize(initialSize / GameHandler.handler.maxSize);
+            float initialSize = GameHandler.slimeSize;
+            sizeBar.SetSize(initialSize / handler.maxSize);
         } else {
             Debug.LogError("SizeBar reference missing");
         }
@@ -30,10 +36,10 @@ public class SlimeSizeBar : MonoBehaviour
     }
 
     void SetSize(float sizeChange) {
-        GameHandler.handler.slimeSize += sizeChange;
-        GameHandler.handler.slimeSize = Mathf.Clamp(GameHandler.handler.slimeSize, 0, GameHandler.handler.maxSize); //will not go past range
+        GameHandler.slimeSize += sizeChange;
+        GameHandler.slimeSize = Mathf.Clamp(GameHandler.slimeSize, 0, handler.maxSize); //will not go past range
         
-        float newRatio = GameHandler.handler.slimeSize / GameHandler.handler.maxSize;
+        float newRatio = GameHandler.slimeSize / handler.maxSize;
         sizeBar.SetSize(newRatio); //updates UI size bar
     }
 }

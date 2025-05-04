@@ -9,28 +9,51 @@ public class EnterGrate : MonoBehaviour
 
     private bool hasEntered = false;
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (hasEntered) return;
+	void Start(){
+		
+	}
 
-        if (counter != null)
-        {
-            float bananaRatio = counter.currBanana / counter.totalBanana;
-            float gumRatio = counter.currGum / counter.totalGum;
-            float cupRatio = counter.currCup / counter.totalCup;
-            float paperRatio = counter.currPaper / counter.totalPaper;
+    void OnCollisionEnter(Collision other){
+		Debug.Log("I collided with: " + other.gameObject.name);
+		if (other.gameObject.tag == "Entrance"){
+        	if (hasEntered) return;
 
-            float trashRatio = bananaRatio / gumRatio / cupRatio / paperRatio;
+        	if (counter != null){
+				int numTotalTrash = 0;
+				float bananaRatio = 0;
+				float gumRatio = 0;
+				float cupRatio = 0;
+				float paperRatio = 0;
 
-            if (other.CompareTag("Entrance") && trashRatio == 1f)
-            {
-                hasEntered = true;
-                SceneManager.LoadScene(cutsceneSceneName);
-            }
-        }
-        else
-        {
-            Debug.Log("Slime player is missing reference to Trash Counter on EnterGrate.cs!");
-        }
+				if (counter.totalBanana > 0) {
+					bananaRatio = counter.currBanana / counter.totalBanana;
+					numTotalTrash +=1;
+					}
+				if (counter.totalGum > 0) {
+					gumRatio = counter.currGum / counter.totalGum;
+					numTotalTrash +=1;
+					}
+				if (counter.totalCup > 0) {
+					cupRatio = counter.currCup / counter.totalCup;
+					numTotalTrash +=1;
+					}
+				if (counter.totalPaper > 0) {
+					paperRatio = counter.currPaper / counter.totalPaper;
+					numTotalTrash +=1;
+					}
+
+				float trashAmount = bananaRatio + gumRatio + cupRatio + paperRatio;
+				trashAmount /= numTotalTrash;
+				Debug.Log("trashAmount = " + trashAmount + ", numTotalTrash = " + numTotalTrash);
+
+				if (trashAmount == 1f){
+					hasEntered = true;
+					SceneManager.LoadScene(cutsceneSceneName);
+				}
+        	}
+			else{
+				Debug.Log("Slime player is missing reference to Trash Counter on EnterGrate.cs!");
+        	}
+		}
     }
 }

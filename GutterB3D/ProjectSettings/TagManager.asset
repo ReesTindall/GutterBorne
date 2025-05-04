@@ -19,6 +19,7 @@ TagManager:
   - listen2rat
   - SolidWorld
   - PlayerAttack
+  - Canvas
   layers:
   - Default
   - TransparentFX

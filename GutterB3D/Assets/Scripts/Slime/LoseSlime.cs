@@ -20,6 +20,10 @@ public class LoseSlime : MonoBehaviour
         mover    = GetComponent<BlobMovementRelative>();
     }
 
+	void Start(){
+		
+	}
+
     public void TakeHit(Vector3 hitDir, float force)
     {
         if (absorptionSound) audioSrc.PlayOneShot(absorptionSound);
