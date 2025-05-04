@@ -302,9 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
+  destroyDelay: 2
 --- !u!1001 &3071784516392558202
 PrefabInstance:
   m_ObjectHideFlags: 0
