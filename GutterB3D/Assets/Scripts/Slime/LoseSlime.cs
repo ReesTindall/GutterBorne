@@ -28,13 +28,13 @@ public class LoseSlime : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            TakeHit();
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         TakeHit();
+    //     }
+    // }
 }
 // using System.Collections.Generic;
 // using System.Collections;

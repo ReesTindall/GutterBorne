@@ -14,6 +14,8 @@ public class RatController : MonoBehaviour
     [Header("Sniff Telegraph")]
     public float sniffDuration  = 0.8f; // length of sniff clip
 
+    public Collider pawCollider; 
+
     Transform player;
     Animator  anim;
     float     lastAttackTime;
@@ -26,6 +28,8 @@ public class RatController : MonoBehaviour
         player = GameObject.FindWithTag("Player")?.transform;
         anim   = GetComponentInChildren<Animator>();
         fixedY = transform.position.y;        // lock Y once
+
+        if (pawCollider != null) pawCollider.enabled = false;
     }
 
 
@@ -92,9 +96,9 @@ public class RatController : MonoBehaviour
         anim.SetBool("Attack", true);
         StartCoroutine(ResetBoolNextFrame("Attack"));
 
-        /* apply damage (shrink) */
-        player.GetComponent<LoseSlime>()?.TakeHit();
     }
+    public void HitStart()   { if (pawCollider) pawCollider.enabled = true;  }
+    public void HitEnd()     { if (pawCollider) pawCollider.enabled = false; }
 
     IEnumerator SniffThenChase()
     {
@@ -121,4 +125,5 @@ public class RatController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
+    
 }
