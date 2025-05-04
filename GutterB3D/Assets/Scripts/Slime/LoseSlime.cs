@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseSlime : MonoBehaviour
 {
@@ -23,9 +24,13 @@ public class LoseSlime : MonoBehaviour
 
         if (transform.localScale.x <= minScale)
         {
-            
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
+    }
+    System.Collections.IEnumerator Die()
+    {
+        yield return new WaitForSeconds(0.25f);    
+        SceneManager.LoadScene("Death_Scene");
     }
 
     // void OnTriggerEnter(Collider other)
