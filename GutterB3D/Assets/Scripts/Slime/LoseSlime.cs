@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,17 +11,24 @@ public class LoseSlime : MonoBehaviour
 
     AudioSource audioSrc;
 
+    BlobMovementRelative mover; 
+
     void Awake()
     {
         audioSrc = GetComponent<AudioSource>();
         if (audioSrc == null) audioSrc = gameObject.AddComponent<AudioSource>();
+        mover    = GetComponent<BlobMovementRelative>();
     }
 
-    public void TakeHit()
+    public void TakeHit(Vector3 hitDir, float force)
     {
         if (absorptionSound) audioSrc.PlayOneShot(absorptionSound);
 
+        if (mover)
+            mover.AddKnockback(hitDir, force);
+
         transform.localScale /= sizeDecrease;
+
 
         if (transform.localScale.x <= minScale)
         {
