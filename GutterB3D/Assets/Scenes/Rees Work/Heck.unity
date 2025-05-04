@@ -520,6 +520,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2835587021102917540, guid: 732799235868e4810b49d1a5cc0b2bf4, type: 3}
+      propertyPath: destroyDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4796250845972651044, guid: 732799235868e4810b49d1a5cc0b2bf4, type: 3}
       propertyPath: m_Name
       value: RAT

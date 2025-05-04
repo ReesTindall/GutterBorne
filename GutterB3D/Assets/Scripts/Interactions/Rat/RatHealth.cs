@@ -30,7 +30,9 @@ public class RatHealth : MonoBehaviour
         RatController rc = GetComponent<RatController>();
         if (rc) rc.enabled = false;
 
-        if (anim) anim.SetBool("Dead", true);
+        if (anim) anim.SetBool("Death", true);
+        yield return null;                 // wait one frame
+        anim.SetBool("Death", false);
 
         
         yield return new WaitForSeconds(destroyDelay);
