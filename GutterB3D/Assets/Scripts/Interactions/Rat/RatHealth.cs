@@ -1,23 +1,39 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class RatHealth : MonoBehaviour
 {
     public int maxHP = 3;
-    public UnityEvent onDeath;     
-
+    public float destroyDelay = 2f;   // length of RatDeath clip
     int hp;
-    void Awake() => hp = maxHP;
+    Animator anim;
+    Collider[] colliders;             // so we can disable hits
+
+    void Awake()
+    {
+        hp = maxHP;
+        anim = GetComponentInChildren<Animator>();
+        colliders = GetComponentsInChildren<Collider>();
+    }
 
     public void TakeDamage(int dmg)
     {
         if (hp <= 0) return;
         hp -= dmg;
 
-        if (hp <= 0)
-        {
-            onDeath?.Invoke();
-            Destroy(gameObject);   
-        }
+        if (hp <= 0) StartCoroutine(Die());
+    }
+
+    System.Collections.IEnumerator Die()
+    {
+
+        foreach (var c in colliders) c.enabled = false;
+        RatController rc = GetComponent<RatController>();
+        if (rc) rc.enabled = false;
+
+        if (anim) anim.SetBool("Dead", true);
+
+        
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(gameObject);
     }
 }
