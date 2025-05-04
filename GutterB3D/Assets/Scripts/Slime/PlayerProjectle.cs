@@ -1,3 +1,22 @@
+using UnityEngine;
+
+[RequireComponent(typeof(Collider))]
+public class ProjectileDamage : MonoBehaviour
+{
+    public int damage = 1;
+    public float lifeTime = 4f;           
+
+    void Awake() => Destroy(gameObject, lifeTime);
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<RatHealth>()?.TakeDamage(damage);
+            Destroy(gameObject);          
+        }
+    }
+}
 // using System.Collections.Generic;
 // using System.Collections;
 // using UnityEngine;

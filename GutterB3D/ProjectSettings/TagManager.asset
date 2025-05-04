@@ -18,6 +18,7 @@ TagManager:
   - jump
   - listen2rat
   - SolidWorld
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
