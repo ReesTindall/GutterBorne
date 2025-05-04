@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 478117790665392055, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Enabled
       value: 0

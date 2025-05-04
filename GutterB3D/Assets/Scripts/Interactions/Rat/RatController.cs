@@ -97,8 +97,19 @@ public class RatController : MonoBehaviour
         StartCoroutine(ResetBoolNextFrame("Attack"));
 
     }
-    public void HitStart()   { if (pawCollider) pawCollider.enabled = true;  }
-    public void HitEnd()     { if (pawCollider) pawCollider.enabled = false; }
+    public void HitStart()
+    {
+        if (pawCollider == null) return;
+        pawCollider.enabled = true;
+
+        PawDamage pd = pawCollider.GetComponent<PawDamage>();
+        if (pd) pd.alreadyHit = false;      
+    }
+
+    public void HitEnd()
+    {
+        if (pawCollider) pawCollider.enabled = false;
+    }
 
     IEnumerator SniffThenChase()
     {

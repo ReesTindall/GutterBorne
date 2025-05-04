@@ -6,6 +6,9 @@ public class BlobMovementRelative : MonoBehaviour
     public float moveSpeed = 5f;
     public float mouseSensitivity = 3f;
 
+    [HideInInspector] public Vector3 externalVelocity;
+    public float knockbackDamp = 5f;   
+
     private CharacterController controller;
     private float verticalRotation = 0f;
 
@@ -26,7 +29,22 @@ public class BlobMovementRelative : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         //Vector3 move = transform.right * h + transform.forward * v;
         Vector3 move = transform.forward * v;
+
+        if (externalVelocity.sqrMagnitude > 0.01f)
+        {
+            move += externalVelocity;
+
+            externalVelocity = Vector3.Lerp(externalVelocity,
+                                            Vector3.zero,
+                                            knockbackDamp * Time.deltaTime);
+        }
+
+
         controller.SimpleMove(move * moveSpeed);
+    }
+    public void AddKnockback(Vector3 dir, float force)
+    {
+        externalVelocity = dir.normalized * force;
     }
 }
 
