@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour
 {
+    [Header("Patrol")]
+    public float patrolRadius = 4f;   
+    public float patrolSpeed  = 1f;   
+    Vector3 patrolCenter;             
+    Vector3 patrolPoint;              
+    bool    patrolPointSet;
+
     [Header("Detection / Movement")]
     public float chaseSpeed   = 4f;
     public float chaseRange   = 10f;
@@ -29,6 +36,9 @@ public class RatController : MonoBehaviour
         anim   = GetComponentInChildren<Animator>();
         fixedY = transform.position.y;        // lock Y once
 
+        patrolCenter = transform.position;          
+        ChoosePatrolPoint();  
+
         if (pawCollider != null) pawCollider.enabled = false;
     }
 
@@ -50,7 +60,7 @@ public class RatController : MonoBehaviour
             if (dist <= chaseRange)
                 StartCoroutine(SniffThenChase());
             else
-                anim.SetFloat("Speed", 0f);
+                Patrol();   
             return;
         }
 
@@ -62,6 +72,35 @@ public class RatController : MonoBehaviour
 
         if (dist > attackRange)    Chase();
         else                       Bite();
+    }
+
+    void ChoosePatrolPoint()
+    {
+        float x = Random.Range(-patrolRadius, patrolRadius);
+        float z = Random.Range(-patrolRadius, patrolRadius);
+        patrolPoint = patrolCenter + new Vector3(x, 0f, z);
+        patrolPointSet = true;
+    }
+
+    void Patrol()
+    {
+        if (!patrolPointSet || Vector3.Distance(transform.position, patrolPoint) < 0.2f)
+            ChoosePatrolPoint();
+
+        Vector3 dir = (patrolPoint - transform.position);
+        dir.y = 0f;
+        dir.Normalize();
+
+    /* face and move */
+        if (dir.sqrMagnitude > 0f)
+        {
+            Quaternion look = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, look,
+                                              Time.deltaTime * 6f);
+            transform.position += dir * patrolSpeed * Time.deltaTime;
+        }
+
+        anim.SetFloat("Speed", patrolSpeed);   // play walk cycle
     }
 
 

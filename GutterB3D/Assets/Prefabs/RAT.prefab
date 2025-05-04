@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  alreadyHit: 0
 --- !u!65 &2337878137484089133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -280,8 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08e4e5efddd640069eb42b0a5a2c20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 1
-  chaseRange: 20
+  patrolRadius: 4
+  patrolSpeed: 1
+  chaseSpeed: 1.5
+  chaseRange: 10
   attackRange: 0.4
   attackCooldown: 1
   sniffDuration: 2.5
