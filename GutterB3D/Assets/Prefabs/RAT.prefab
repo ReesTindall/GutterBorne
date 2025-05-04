@@ -214,7 +214,7 @@ Transform:
   - {fileID: 3254856523542886801}
   - {fileID: 1065612638179526603}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2212300896197981312
 Rigidbody:
@@ -284,7 +284,7 @@ MonoBehaviour:
   patrolRadius: 4
   patrolSpeed: 1
   chaseSpeed: 1.5
-  chaseRange: 10
+  chaseRange: 20
   attackRange: 0.4
   attackCooldown: 1
   sniffDuration: 2.5
