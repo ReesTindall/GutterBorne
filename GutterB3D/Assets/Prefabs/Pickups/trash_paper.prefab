@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7582653546439666830}
   - component: {fileID: 272290249329421585}
   - component: {fileID: -6137894229401407619}
-  - component: {fileID: 631514832741758485}
+  - component: {fileID: 6889648137050364281}
   m_Layer: 0
   m_Name: trash_paper
   m_TagString: Paper
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 38024125212983021}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7582653546439666830
 MonoBehaviour:
@@ -95,7 +95,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &631514832741758485
+--- !u!54 &6889648137050364281
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!1001 &508255576200550662
 PrefabInstance:
   m_ObjectHideFlags: 0
