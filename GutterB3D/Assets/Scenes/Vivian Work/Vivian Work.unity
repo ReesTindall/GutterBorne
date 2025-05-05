@@ -307,60 +307,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &971993454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 971993456}
-  - component: {fileID: 971993455}
-  m_Layer: 0
-  m_Name: PersonSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &971993455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971993454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 552e247fb1d54440185140c37e968471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  personPrefab: {fileID: 5638440702763996301, guid: 24ac15861d695484486b5e65a5af9f8b, type: 3}
-  xRange: {x: -9.1, y: 5.8}
-  spawnZ: 36
-  minSpeed: 1
-  maxSpeed: 5
-  spawnInterval: 1
-  skinMaterials:
-  - {fileID: 2100000, guid: 72bf58f7416a14752a119f1d1a1dbd3c, type: 2}
-  - {fileID: 2100000, guid: e107dc82f500e4d2bbe468cb6dbb2b2e, type: 2}
-  - {fileID: 2100000, guid: ffc7434a05b5d47fa895a0d2708c1e4a, type: 2}
---- !u!4 &971993456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971993454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9148183, y: 16.362309, z: 42.63788}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945606556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
@@ -518,19 +464,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 5899276602779894146, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209422079932093625, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
-      propertyPath: environmentMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
+--- !u!1001 &976143168717746440
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 926142455675647669, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_Name
+      value: PersonSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.9148183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.362309
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.63788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732922823668511879, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea7a495d1b5ea4f139ada25e5614fb2b, type: 3}
 --- !u!1001 &1680637947358925023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,17 +740,9 @@ PrefabInstance:
       propertyPath: groundObject
       value: 
       objectReference: {fileID: 278532642}
-    - target: {fileID: 3105075055763059548, guid: 24ac15861d695484486b5e65a5af9f8b, type: 3}
-      propertyPath: walkSpeed
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 5638440702763996301, guid: 24ac15861d695484486b5e65a5af9f8b, type: 3}
       propertyPath: m_Name
       value: SIMPLEMAN
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638440702763996301, guid: 24ac15861d695484486b5e65a5af9f8b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9162556734990107624, guid: 24ac15861d695484486b5e65a5af9f8b, type: 3}
       propertyPath: m_RootOrder

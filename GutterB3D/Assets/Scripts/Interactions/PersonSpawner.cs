@@ -33,13 +33,14 @@ public class PersonSpawner : MonoBehaviour
         );
 
         GameObject person = Instantiate(personPrefab, spawnPos, Quaternion.identity);
+        person.SetActive(true);
 
         // Randomize speed
         PersonWalker walker = person.GetComponent<PersonWalker>();
         if (walker != null)
         {
             float speed = Random.Range(minSpeed, maxSpeed);
-            walker.walkSpeed = speed;
+            walker.walkSpeed = -speed;
             walker.animSpeed = speed;
         }
 
