@@ -1476,6 +1476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 8273506427401717412, guid: 3a0cbbb8f00874169872df94faacc878, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1846,6 +1850,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: centerPnt
+      value: 
+      objectReference: {fileID: 1800842423}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[0].tag
+      value: Cup
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[1].tag
+      value: Banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[2].tag
+      value: Gum
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[3].tag
+      value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 4883715780125563703, guid: ef14258e796b5428b9892fea3e45ceeb, type: 3}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 6749128721214738845, guid: 763a44bb910874b94a0cdbb1548f2986, type: 3}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 1628993338067040273, guid: 8e28364fb6bee42c5ada562fe787bafd, type: 3}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashPrefabs.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 458041014958797346, guid: a6568502535594021b72e33dca9513a3, type: 3}
+    - target: {fileID: 66381430455364455, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 219158198346048604, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Name
       value: Blob_Player
@@ -1858,6 +1910,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: d226115e3019d4473920256788df2707, type: 2}
+    - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: trashCounter
       value: 
@@ -3328,6 +3384,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800503021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1800842423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6957751342577238404, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+  m_PrefabInstance: {fileID: 1010930021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1801362620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3340,6 +3401,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d2dc4010b79142fb94fe32a15766498, type: 2}
+    - target: {fileID: 1213001548525255183, guid: 944c413978b3e46638321dde7e857e50, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1377340367437321515, guid: 944c413978b3e46638321dde7e857e50, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3347,6 +3412,10 @@ PrefabInstance:
     - target: {fileID: 1516511175895451500, guid: 944c413978b3e46638321dde7e857e50, type: 3}
       propertyPath: m_Name
       value: alley walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516511175895451500, guid: 944c413978b3e46638321dde7e857e50, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994836805268983261, guid: 944c413978b3e46638321dde7e857e50, type: 3}
       propertyPath: m_LocalScale.x
@@ -3406,6 +3475,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3700164578613287753, guid: 944c413978b3e46638321dde7e857e50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403454093494067882, guid: 944c413978b3e46638321dde7e857e50, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6117406112469190991, guid: 944c413978b3e46638321dde7e857e50, type: 3}
@@ -3927,6 +4000,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6209422079932093625, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
+      propertyPath: collisionBuffer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209422079932093625, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
+      propertyPath: sphereCastRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209422079932093625, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
+      propertyPath: environmentMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7328847476868479462, guid: 0ae67644f8a71468586118e4e8b9ec37, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4185,6 +4270,10 @@ PrefabInstance:
     - target: {fileID: 577898441061265322, guid: c630c9ffa016c49969771c0b296d88fa, type: 3}
       propertyPath: m_Name
       value: plank_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 577898441061265322, guid: c630c9ffa016c49969771c0b296d88fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -21,70 +21,104 @@ public class TrashAbsorb : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
-    
     void OnTriggerEnter(Collider other)
+{
+    if (trashCounter == null || hasCollided)
+        return;
+
+    hasCollided = true;
+
+    if (other.CompareTag("Banana")) trashCounter.setBanana();
+    else if (other.CompareTag("Gum")) trashCounter.setGum();
+    else if (other.CompareTag("Cup")) trashCounter.setCup();
+    else if (other.CompareTag("Paper")) trashCounter.setPaper();
+    else {
+        hasCollided = false;  // not a trash item
+        return;
+    }
+
+    if (absorptionSound != null)
     {
-        if(trashCounter != null) {
-            if (other.CompareTag("Banana") && !hasCollided)
-            {
-                hasCollided = true;
-                trashCounter.setBanana();
+        audioSource.outputAudioMixerGroup = mixerGroup;
+        audioSource.PlayOneShot(absorptionSound);
+    }
 
-                if (absorptionSound != null)
-                {
-                    audioSource.outputAudioMixerGroup = mixerGroup;
-                    audioSource.PlayOneShot(absorptionSound);
-                    Debug.Log("playing sfx");
-                }
-                Destroy(other.gameObject);
-            }
+    Destroy(other.gameObject);
 
-            if (other.CompareTag("Gum") && !hasCollided)
-            {
-                hasCollided = true;
-                trashCounter.setGum();
+    // schedule the reset _next_ physics step
+    StartCoroutine(ResetCollisionNextFrame());
+}
 
-                if (absorptionSound != null)
-                {
-                    audioSource.outputAudioMixerGroup = mixerGroup;
-                    audioSource.PlayOneShot(absorptionSound);
-                    Debug.Log("playing sfx");
-                }
-                Destroy(other.gameObject);
-            }
+private IEnumerator ResetCollisionNextFrame()
+{
+    // wait for physics to finish this step
+    yield return new WaitForFixedUpdate();
+    hasCollided = false;
+}
 
-            if (other.CompareTag("Cup") && !hasCollided)
-            {
-                hasCollided = true;
-                trashCounter.setCup();
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if(trashCounter != null) {
+    //         if (other.CompareTag("Banana") && !hasCollided)
+    //         {
+    //             hasCollided = true;
+    //             trashCounter.setBanana();
 
-                if (absorptionSound != null)
-                {
-                    audioSource.outputAudioMixerGroup = mixerGroup;
-                    audioSource.PlayOneShot(absorptionSound);
-                    Debug.Log("playing sfx");
-                }
-                Destroy(other.gameObject);
-            }
+    //             if (absorptionSound != null)
+    //             {
+    //                 audioSource.outputAudioMixerGroup = mixerGroup;
+    //                 audioSource.PlayOneShot(absorptionSound);
+    //                 Debug.Log("playing sfx");
+    //             }
+    //             Destroy(other.gameObject);
+    //         }
 
-            if (other.CompareTag("Paper") && !hasCollided)
-            {
-                hasCollided = true;
-                trashCounter.setPaper();
+    //         if (other.CompareTag("Gum") && !hasCollided)
+    //         {
+    //             hasCollided = true;
+    //             trashCounter.setGum();
 
-                if (absorptionSound != null)
-                {
-                    audioSource.outputAudioMixerGroup = mixerGroup;
-                    audioSource.PlayOneShot(absorptionSound);
-                    Debug.Log("playing sfx");
-                }
-                    Destroy(other.gameObject);
-            }
-        } else {
-            Debug.Log("Slime player is missing reference to Trash Counter on TrashAbsorb.cs!");
-        }
+    //             if (absorptionSound != null)
+    //             {
+    //                 audioSource.outputAudioMixerGroup = mixerGroup;
+    //                 audioSource.PlayOneShot(absorptionSound);
+    //                 Debug.Log("playing sfx");
+    //             }
+    //             Destroy(other.gameObject);
+    //         }
+
+    //         if (other.CompareTag("Cup") && !hasCollided)
+    //         {
+    //             hasCollided = true;
+    //             trashCounter.setCup();
+
+    //             if (absorptionSound != null)
+    //             {
+    //                 audioSource.outputAudioMixerGroup = mixerGroup;
+    //                 audioSource.PlayOneShot(absorptionSound);
+    //                 Debug.Log("playing sfx");
+    //             }
+    //             Destroy(other.gameObject);
+    //         }
+
+    //         if (other.CompareTag("Paper") && !hasCollided)
+    //         {
+    //             hasCollided = true;
+    //             trashCounter.setPaper();
+
+    //             if (absorptionSound != null)
+    //             {
+    //                 audioSource.outputAudioMixerGroup = mixerGroup;
+    //                 audioSource.PlayOneShot(absorptionSound);
+    //                 Debug.Log("playing sfx");
+    //             }
+    //                 Destroy(other.gameObject);
+    //         }
+    //     } else {
+    //         Debug.Log("Slime player is missing reference to Trash Counter on TrashAbsorb.cs!");
+    //     }
         
-    } 
+    // } 
 
     void OnTriggerExit(Collider other) {
         if (other.CompareTag("Banana") || other.CompareTag("Gum") || other.CompareTag("Cup") || other.CompareTag("Paper")) {

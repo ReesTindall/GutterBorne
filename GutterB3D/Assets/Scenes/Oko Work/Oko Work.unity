@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5142,7 +5142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ae00a5b2784a6414c950afcb443ddba5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5601,7 +5601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ae00a5b2784a6414c950afcb443ddba5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6687,9 +6687,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBase: {fileID: 2901350}
   firePoint: {fileID: 336370150}
-  projectilePrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
+  slimeballPrefab: {fileID: 0}
+  fireballPrefab: {fileID: 0}
   projectileSpeed: 10
   attackRate: 2
+  useFireball: 0
 --- !u!82 &1232948113
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6874,8 +6876,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isFlattenedFromCollision: 0
   jumpTweenOn: 0
   moveTweenOn: 0
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.15
 --- !u!114 &1232948115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6910,28 +6915,6 @@ MonoBehaviour:
   centerPnt: {fileID: 1619125216}
   absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
   mixerGroup: {fileID: 0}
-  myFood:
-  - {fileID: 964964883}
-  - {fileID: 711495351}
-  - {fileID: 673500780}
-  - {fileID: 673500780}
-  - {fileID: 711495351}
-  - {fileID: 1959029318}
-  - {fileID: 1393939123}
-  - {fileID: 163058440}
-  - {fileID: 1959029318}
-  - {fileID: 163058440}
-  - {fileID: 964964883}
-  - {fileID: 163058440}
-  - {fileID: 711495351}
-  - {fileID: 163058440}
-  - {fileID: 1393939123}
-  - {fileID: 163058440}
-  - {fileID: 163058440}
-  - {fileID: 600005848}
-  - {fileID: 1023292352}
-  - {fileID: 1470182384}
-  - {fileID: 1707978807}
 --- !u!54 &1232948117
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,77 +1,115 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class RatController : MonoBehaviour
 {
+    /* ---------- Patrol ------------------------------- */
     [Header("Patrol")]
-    public float patrolRadius = 4f;   
-    public float patrolSpeed  = 1f;   
-    Vector3 patrolCenter;             
-    Vector3 patrolPoint;              
-    bool    patrolPointSet;
+    public float patrolRadius = 4f;
+    public float patrolSpeed  = 1f;
 
-    [Header("Detection / Movement")]
-    public float chaseSpeed   = 1f;
-    public float chaseRange   = 10f;
-    public float attackRange  = 1.5f;
+    /* ---------- Detection / Chase -------------------- */
+    [Header("Detection / Chase")]
+    public float chaseSpeed  = 2f;
+    public float chaseRange  = 10f;
+    public float attackRange = 1.5f;
 
+    /* ---------- Attack -------------------------------- */
     [Header("Attack")]
-    public float attackCooldown = 3f;   // seconds between bites
+    public float attackCooldown = 3f;
 
+    /* ---------- Sniff Telegraph ----------------------- */
     [Header("Sniff Telegraph")]
-    public float sniffDuration  = 0.8f; // length of sniff clip
+    public float sniffDuration = 0.8f;
 
-    public Collider pawCollider; 
-
-    Transform player;
+    /* ---------- References ---------------------------- */
+    public Collider pawCollider;            // assign hitbox
     Animator  anim;
-    float     lastAttackTime;
-    bool      sniffDone;
-    bool      sniffingNow;
-    float     fixedY;
+    Rigidbody rb;
+    Transform player;
 
-    void Start ()
+    /* ---------- Internal state ------------------------ */
+    Vector3  patrolCenter;
+    Vector3  patrolPoint;
+    bool     patrolPointSet;
+    bool     sniffDone;
+    bool     sniffingNow;
+    float    lastAttackTime;
+
+    /* ================================================== */
+    void Start()
     {
-        player = GameObject.FindWithTag("Player")?.transform;
         anim   = GetComponentInChildren<Animator>();
-        fixedY = transform.position.y;        // lock Y once
+        rb     = GetComponent<Rigidbody>();
+        player = GameObject.FindWithTag("Player")?.transform;
 
-        patrolCenter = transform.position;          
-        ChoosePatrolPoint();  
+        /* lock Y position & tipping */
+        rb.constraints = RigidbodyConstraints.FreezePositionY |
+                         RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationZ;
 
-        if (pawCollider != null) pawCollider.enabled = false;
+        patrolCenter = transform.position;
+        ChoosePatrolPoint();
+
+        if (pawCollider) pawCollider.enabled = false;
     }
 
-
-    void Update ()
+    /* ================================================== */
+    void FixedUpdate()
     {
-        if (player == null) return;
+        if (!player) return;
 
-        /* keep rat glued to start height */
-        Vector3 pos = transform.position;
-        pos.y = fixedY;
-        transform.position = pos;
+        float dist = Vector3.Distance(rb.position, player.position);
 
-        float dist = Vector3.Distance(transform.position, player.position);
-
-
+        /* ---- Sniff phase -------------------------------- */
         if (!sniffDone)
         {
-            if (dist <= chaseRange)
-                StartCoroutine(SniffThenChase());
-            else
-                Patrol();   
+            if (dist <= chaseRange) StartCoroutine(SniffThenChase());
+            else                    Patrol();
             return;
         }
+        if (sniffingNow) { anim.SetFloat("Speed", 0f); return; }
 
-        if (sniffingNow)
-        {
-            anim.SetFloat("Speed", 0f);
-            return;
-        }
+        /* ---- Chase or Bite ------------------------------ */
+        if (dist > attackRange) Chase();
+        else                    Bite();
+    }
 
-        if (dist > attackRange)    Chase();
-        else                       Bite();
+    /* ================================================== */
+    /* ---------------- Movement helpers ---------------- */
+    void Patrol()
+    {
+        if (!patrolPointSet ||
+            Vector3.Distance(rb.position, patrolPoint) < 0.2f)
+            ChoosePatrolPoint();
+
+        MoveTowards(patrolPoint, patrolSpeed);
+        anim.SetFloat("Speed", patrolSpeed);
+    }
+
+    void Chase()
+    {
+        MoveTowards(player.position, chaseSpeed);
+        anim.SetFloat("Speed", chaseSpeed);
+    }
+
+    void MoveTowards(Vector3 target, float speed)
+    {
+        Vector3 dir = target - rb.position;
+        dir.y = 0f;
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        dir.Normalize();
+
+        /* rotate */
+        Quaternion look = Quaternion.LookRotation(dir, Vector3.up);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation, look, Time.fixedDeltaTime * 10f);
+
+        /* physics move */
+        Vector3 nextPos = rb.position + dir * speed * Time.fixedDeltaTime;
+        rb.MovePosition(nextPos);
     }
 
     void ChoosePatrolPoint()
@@ -82,49 +120,8 @@ public class RatController : MonoBehaviour
         patrolPointSet = true;
     }
 
-    void Patrol()
-    {
-        if (!patrolPointSet || Vector3.Distance(transform.position, patrolPoint) < 0.2f)
-            ChoosePatrolPoint();
-
-        Vector3 dir = (patrolPoint - transform.position);
-        dir.y = 0f;
-        dir.Normalize();
-
-    /* face and move */
-        if (dir.sqrMagnitude > 0f)
-        {
-            Quaternion look = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, look,
-                                              Time.deltaTime * 6f);
-            transform.position += dir * patrolSpeed * Time.deltaTime;
-        }
-
-        anim.SetFloat("Speed", patrolSpeed);   // play walk cycle
-    }
-
-
-    void Chase()
-    {
-        /* direction in XZ plane */
-        Vector3 dir = (player.position - transform.position);
-        dir.y = 0f;
-        if (dir.sqrMagnitude < 0.0001f) return;   // already on top
-
-        dir.Normalize();
-
-        /* rotate toward slime */
-        Quaternion targetRot = Quaternion.LookRotation(dir, Vector3.up);
-        transform.rotation   = Quaternion.Slerp(transform.rotation,
-                                                targetRot,
-                                                Time.deltaTime * 10f);
-
-        /* move */
-        transform.position += dir * chaseSpeed * Time.deltaTime;
-
-        anim.SetFloat("Speed", chaseSpeed);   // drive Walk
-    }
-
+    /* ================================================== */
+    /* ---------------- Attack logic -------------------- */
     void Bite()
     {
         anim.SetFloat("Speed", 0f);
@@ -134,46 +131,44 @@ public class RatController : MonoBehaviour
 
         anim.SetBool("Attack", true);
         StartCoroutine(ResetBoolNextFrame("Attack"));
-
     }
+
+    /* Animation Events called from Attack clip */
     public void HitStart()
     {
-        if (pawCollider == null) return;
+        if (!pawCollider) return;
         pawCollider.enabled = true;
-
-        PawDamage pd = pawCollider.GetComponent<PawDamage>();
-        if (pd) pd.alreadyHit = false;      
+        var pd = pawCollider.GetComponent<PawDamage>();
+        if (pd) pd.alreadyHit = false;
     }
-
     public void HitEnd()
     {
         if (pawCollider) pawCollider.enabled = false;
     }
 
+    /* ================================================== */
+    /* ---------------- Sniff helper -------------------- */
     IEnumerator SniffThenChase()
     {
         sniffDone   = true;
         sniffingNow = true;
-
-        anim.SetBool ("Sniff", true);
+        anim.SetBool("Sniff", true);
         anim.SetFloat("Speed", 0f);
-
         yield return new WaitForSeconds(sniffDuration);
-
         anim.SetBool("Sniff", false);
         sniffingNow = false;
     }
 
-    IEnumerator ResetBoolNextFrame(string param)
+    IEnumerator ResetBoolNextFrame(string p)
     {
-        yield return null;                 // one frame
-        anim.SetBool(param, false);
+        yield return null;
+        anim.SetBool(p, false);
     }
 
+    /* Editor gizmo */
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-    
 }
