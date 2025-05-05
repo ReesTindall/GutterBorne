@@ -12,32 +12,53 @@ public class Slime_Scale : MonoBehaviour {
 // Each starts at 1, ends at 1, and has at least one middle keyframe.
 // In this case, Move center goes down and jump goes up.
     public Transform scaleTweener;
-    Vector3 startScale;
+    private Vector3 startScale;
 
     public AnimationCurve curveMove = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     public AnimationCurve curveJump = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
-    float elapsed = 0f;
-    float elapsedJump = 0f;
+    private float elapsed = 0f;
+    private float elapsedJump = 0f;
 
-    // Controlled externally by trigger scripts
     [HideInInspector] public bool isFlattenedFromCollision = false;
 
-    // Movement flags
     public bool jumpTweenOn = false;
     public bool moveTweenOn = false;
+
+    private float flattenTimer = 0f;
+    private float flattenHoldTime = 1f;
+
+    private Renderer slimeRenderer;
+    private Color originalColor;
+    public Color flashColor = Color.red;
+    public float flashDuration = 0.15f;
 
     private void Start()
     {
         startScale = scaleTweener.localScale;
+
+        slimeRenderer = scaleTweener.GetComponentInChildren<Renderer>();
+        if (slimeRenderer != null)
+        {
+            originalColor = slimeRenderer.material.color;
+        }
     }
 
     private void FixedUpdate()
     {
-        // COLLISION FLATTENING — overrides other scaling if active
+        // Handle flatten duration
         if (isFlattenedFromCollision)
         {
-            // Actively squished while in contact
+            flattenTimer = flattenHoldTime; // Reset timer
+        }
+        else if (flattenTimer > 0f)
+        {
+            flattenTimer -= Time.fixedDeltaTime;
+        }
+
+        // COLLISION FLATTENING (and timer-based persistence)
+        if (flattenTimer > 0f)
+        {
             scaleTweener.localScale = new Vector3(
                 startScale.x * 1.2f,
                 startScale.y * 0.5f,
@@ -46,7 +67,6 @@ public class Slime_Scale : MonoBehaviour {
         }
         else
         {
-            // Smoothly return to default scale
             scaleTweener.localScale = Vector3.Lerp(
                 scaleTweener.localScale,
                 startScale,
@@ -88,5 +108,24 @@ public class Slime_Scale : MonoBehaviour {
                 elapsed = 0f;
             }
         }
+
+        // Reset isFlattenedFromCollision flag each frame — external scripts must set it
+        isFlattenedFromCollision = false;
+    }
+
+    public void FlashRed()
+    {
+        if (slimeRenderer != null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(FlashRoutine());
+        }
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        slimeRenderer.material.color = flashColor;
+        yield return new WaitForSeconds(flashDuration);
+        slimeRenderer.material.color = originalColor;
     }
 }

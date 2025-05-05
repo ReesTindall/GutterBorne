@@ -50,6 +50,7 @@ public class LoseSlime : MonoBehaviour
 
         transform.localScale -= shrinkAmount;
         transform.localScale = Vector3.Max(transform.localScale, Vector3.one * minScale);
+        scaleTweener.FlashRed();
 
         if (transform.localScale.x <= minScale)
         {
