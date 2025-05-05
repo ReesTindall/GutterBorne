@@ -87,8 +87,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3408821232011588499}
   m_LocalRotation: {x: 0, y: 0.5735764, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: -0.00056, y: -0.00187, z: 0.00012}
-  m_LocalScale: {x: 0.001, y: 0.004, z: 0.004}
+  m_LocalPosition: {x: -0.00056, y: -0.001, z: 0.00012}
+  m_LocalScale: {x: 0.002, y: 0.006, z: 0.006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9178327196139830657}
@@ -287,7 +287,7 @@ MonoBehaviour:
   patrolSpeed: 1
   chaseSpeed: 1.5
   chaseRange: 20
-  attackRange: 0.4
+  attackRange: 0.5
   attackCooldown: 1
   sniffDuration: 2.5
   pawCollider: {fileID: 2337878137484089133}
@@ -325,7 +325,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
-  m_Height: 1.4
+  m_Height: 0.8
   m_Direction: 2
   m_Center: {x: -0.05, y: 0, z: -0.3}
 --- !u!1001 &3071784516392558202
