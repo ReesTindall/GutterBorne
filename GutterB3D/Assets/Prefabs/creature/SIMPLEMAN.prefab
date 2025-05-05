@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 9015797515452272363}
   - component: {fileID: 3357078272995579093}
   - component: {fileID: 3105075055763059548}
-  - component: {fileID: 6532133909127094962}
+  - component: {fileID: 902652587226059072}
   m_Layer: 0
   m_Name: SIMPLEMAN
   m_TagString: Enemy
@@ -460,19 +460,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: -2
   animSpeed: 1
---- !u!114 &6532133909127094962
+--- !u!114 &902652587226059072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5638440702763996301}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde36a6012e5f4c2597f048c9d0f3aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyZ: -50
+  destroyZ: -40
 --- !u!1001 &7181778901210218757
 PrefabInstance:
   m_ObjectHideFlags: 0
