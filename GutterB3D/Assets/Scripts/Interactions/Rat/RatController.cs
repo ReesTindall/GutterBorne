@@ -11,7 +11,7 @@ public class RatController : MonoBehaviour
     bool    patrolPointSet;
 
     [Header("Detection / Movement")]
-    public float chaseSpeed   = 2f;
+    public float chaseSpeed   = 1f;
     public float chaseRange   = 10f;
     public float attackRange  = 1.5f;
 

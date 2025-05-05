@@ -17,24 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OFFICIAL_LEVELS/Level1.unity
     guid: dc0835a46172c47e5a32fe5cd4354809
-  - enabled: 0
-    path: Assets/Scenes/Level 1 - Sewer 1.unity
-    guid: 2a9baca1774a0406c816712c0ca7e02a
-  - enabled: 0
-    path: Assets/Scenes/Rees Work/Rees Work.unity
-    guid: 7917fd423d09a422d9130da9aa10093d
-  - enabled: 0
-    path: Assets/Scenes/Demo.unity
-    guid: c584db8af6c6a4218a1322bc388ee4fe
-  - enabled: 0
-    path: Assets/Scenes/OLD/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/OFFICIAL_LEVELS/Level2.unity
     guid: da8972525e6e948ffbf48a323d6e8bb0
-  - enabled: 0
-    path: Assets/Scenes/Madda Work/Level 2 - Alley.unity
-    guid: bf9c9c2bc035349c2a4d7aa99881286d
+  - enabled: 1
+    path: Assets/Scenes/OFFICIAL_LEVELS/Level3.unity
+    guid: e01c699cd3c704919a435d2c400618b1
+  - enabled: 1
+    path: Assets/Scenes/OFFICIAL_LEVELS/Level4.unity
+    guid: 79ca1ad71253b4e0d9c82be6c6b15753
+  - enabled: 1
+    path: Assets/Scenes/OFFICIAL_LEVELS/Level5.unity
+    guid: ebdcbc59c8f774ca1903e0b8bb2d3106
   - enabled: 1
     path: Assets/Scenes/OFFICIAL_LEVELS/Sewer_Cutscene1.unity
     guid: 60541268573fc4e4f834b057bb6459bc
