@@ -13,10 +13,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private const string MUSIC_KEY = "VolumeMusic";
-    private const string SFX_KEY = "VolumeSFX";
-    private const string MUSIC_PARAM = "MusicVolume";
-    private const string SFX_PARAM = "SFXVolume";
+    public const string MUSIC_KEY = "VolumeMusic";
+    public const string SFX_KEY = "VolumeSFX";
+    public const string MUSIC_PARAM = "MusicVolume";
+    public const string SFX_PARAM = "SFXVolume";
 
     void Awake()
     {
