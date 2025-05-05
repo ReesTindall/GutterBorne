@@ -223,6 +223,8 @@ MonoBehaviour:
   isFlattenedFromCollision: 0
   jumpTweenOn: 0
   moveTweenOn: 0
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.15
 --- !u!114 &7322837131332519473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,9 +267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBase: {fileID: 5969062672026714537}
   firePoint: {fileID: 3798111099364686831}
-  projectilePrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
+  slimeballPrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
+  fireballPrefab: {fileID: 6196260898054373304, guid: b3c2b87f75596c049b9c0af8e3e1908c, type: 3}
   projectileSpeed: 20
   attackRate: 2
+  useFireball: 0
 --- !u!114 &924104200864097822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219158198346048604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd4e12c6f5754dc9ae2d75f216a78aa, type: 3}
   m_Name: 
@@ -442,7 +446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219158198346048604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 470ab64150fcd774c90451bfeddb7b5a, type: 3}
   m_Name: 
