@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1272226177819394827
 MonoBehaviour:
@@ -49,8 +49,11 @@ MonoBehaviour:
   spawnZ: 36
   minSpeed: 1
   maxSpeed: 5
-  spawnInterval: 5
+  spawnInterval: 4
   skinMaterials:
   - {fileID: 2100000, guid: 72bf58f7416a14752a119f1d1a1dbd3c, type: 2}
   - {fileID: 2100000, guid: e107dc82f500e4d2bbe468cb6dbb2b2e, type: 2}
   - {fileID: 2100000, guid: ffc7434a05b5d47fa895a0d2708c1e4a, type: 2}
+  - {fileID: 2100000, guid: 85a62823d791d42e4b6c4453c0aef1e1, type: 2}
+  - {fileID: 2100000, guid: 33b73643638ac4a68b86b2dc0669eee8, type: 2}
+  - {fileID: 2100000, guid: 33b73643638ac4a68b86b2dc0669eee8, type: 2}

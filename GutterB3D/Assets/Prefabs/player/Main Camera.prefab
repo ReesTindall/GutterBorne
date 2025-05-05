@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSpeed: 10
-  viewAngleDegrees: 10
-  baseDistance: 1.5
-  heightOffset: 0.1
+  viewAngleDegrees: 25
+  baseDistance: 1.8
+  heightOffset: 0.7
   distanceScaleFactor: 1.1
   environmentMask:
     serializedVersion: 2

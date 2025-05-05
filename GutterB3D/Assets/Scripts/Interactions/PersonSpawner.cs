@@ -8,11 +8,14 @@ public class PersonSpawner : MonoBehaviour
     public float spawnZ = 20f;
     public float minSpeed = 1f;
     public float maxSpeed = 3f;
-    public float spawnInterval = 2f;    // Time between spawns in seconds
+    public float spawnInterval = 2f;
 
     public List<Material> skinMaterials;
 
     private float spawnTimer;
+
+    private Queue<Material> recentlyUsed = new Queue<Material>();
+    private int cooldownCount = 3; // Number of spawns to wait before a material can be reused
 
     void Update()
     {
@@ -44,22 +47,44 @@ public class PersonSpawner : MonoBehaviour
             walker.animSpeed = speed;
         }
 
-        // Randomize material
-        // Randomize material
+        // Randomize material (avoiding recently used ones)
         if (skinMaterials.Count > 0)
         {
+            Material chosenMat = GetRandomMaterial();
+
             SkinnedMeshRenderer skinnedRenderer = person.GetComponentInChildren<SkinnedMeshRenderer>();
             if (skinnedRenderer != null)
             {
-                // Duplicate current materials array
                 Material[] newMats = skinnedRenderer.materials;
-
-                // Replace the first material slot (usually the body/skin) with a random one
-                newMats[0] = new Material(skinMaterials[Random.Range(0, skinMaterials.Count)]);
-
-                // Assign the new material array back
+                newMats[0] = new Material(chosenMat);
                 skinnedRenderer.materials = newMats;
             }
+
+            // Add to cooldown queue
+            recentlyUsed.Enqueue(chosenMat);
+            if (recentlyUsed.Count > cooldownCount)
+            {
+                recentlyUsed.Dequeue();
+            }
         }
+    }
+
+    Material GetRandomMaterial()
+    {
+        // Try to avoid recently used materials
+        List<Material> available = new List<Material>(skinMaterials);
+        foreach (Material m in recentlyUsed)
+        {
+            available.Remove(m);
+        }
+
+        // If all materials are in cooldown, allow all again
+        if (available.Count == 0)
+        {
+            available.AddRange(skinMaterials);
+            recentlyUsed.Clear();
+        }
+
+        return available[Random.Range(0, available.Count)];
     }
 }
