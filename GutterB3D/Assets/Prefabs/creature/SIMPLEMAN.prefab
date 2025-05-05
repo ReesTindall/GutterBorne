@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2808588982899177072}
   - component: {fileID: 6471058908814751251}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: RightFootCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ Transform:
   m_Children:
   - {fileID: 7214894839374718702}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7735091188828055369
 AudioSource:
@@ -460,6 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: -2
   animSpeed: 1
+  walkDirection: {x: 0, y: 0, z: -1}
 --- !u!114 &902652587226059072
 MonoBehaviour:
   m_ObjectHideFlags: 0

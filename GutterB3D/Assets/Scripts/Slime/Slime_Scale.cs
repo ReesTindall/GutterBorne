@@ -11,51 +11,82 @@ public class Slime_Scale : MonoBehaviour {
 // There is a new AnmationCurve for each type of motion: move, jump, etc.
 // Each starts at 1, ends at 1, and has at least one middle keyframe.
 // In this case, Move center goes down and jump goes up.
-
     public Transform scaleTweener;
     Vector3 startScale;
+
     public AnimationCurve curveMove = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     public AnimationCurve curveJump = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
     float elapsed = 0f;
     float elapsedJump = 0f;
 
-    // bools activated by a separate character movement script:
+    // Controlled externally by trigger scripts
+    [HideInInspector] public bool isFlattenedFromCollision = false;
+
+    // Movement flags
     public bool jumpTweenOn = false;
     public bool moveTweenOn = false;
 
-    private void Start(){
+    private void Start()
+    {
         startScale = scaleTweener.localScale;
     }
 
-    private void FixedUpdate () {
-    //TWEENING jump (curve goes up). Note it will always finish the current elapse:
-        if ((jumpTweenOn)||(elapsedJump > 0)){
-            Vector3 newScale = new Vector3(startScale.x - (curveJump.Evaluate(elapsedJump) -1),
-                startScale.y + (curveJump.Evaluate(elapsedJump) -1),
-                startScale.z - (curveJump.Evaluate(elapsedJump) -1)
-                );
+    private void FixedUpdate()
+    {
+        // COLLISION FLATTENING — overrides other scaling if active
+        if (isFlattenedFromCollision)
+        {
+            // Actively squished while in contact
+            scaleTweener.localScale = new Vector3(
+                startScale.x * 1.2f,
+                startScale.y * 0.5f,
+                startScale.z * 1.2f
+            );
+        }
+        else
+        {
+            // Smoothly return to default scale
+            scaleTweener.localScale = Vector3.Lerp(
+                scaleTweener.localScale,
+                startScale,
+                Time.deltaTime * 10f
+            );
+        }
+
+        // JUMP TWEENING
+        if (jumpTweenOn || elapsedJump > 0)
+        {
+            Vector3 newScale = new Vector3(
+                startScale.x - (curveJump.Evaluate(elapsedJump) - 1),
+                startScale.y + (curveJump.Evaluate(elapsedJump) - 1),
+                startScale.z - (curveJump.Evaluate(elapsedJump) - 1)
+            );
             scaleTweener.localScale = newScale;
             elapsedJump += Time.deltaTime;
-            //reset / end:
-            if (elapsedJump >= 1f){
-                elapsedJump = 0;
+
+            if (elapsedJump >= 1f)
+            {
+                elapsedJump = 0f;
                 jumpTweenOn = false;
             }
         }
 
-        //TWEENING walk (curve ges down). Note it will always finish the current elapse:
-        if ((moveTweenOn)||(elapsed > 0)){
-            Vector3 newScale = new Vector3(startScale.x + (1-curveMove.Evaluate(elapsed)),
+        // MOVE TWEENING
+        if (moveTweenOn || elapsed > 0)
+        {
+            Vector3 newScale = new Vector3(
+                startScale.x + (1 - curveMove.Evaluate(elapsed)),
                 startScale.y * curveMove.Evaluate(elapsed),
-                startScale.z + (1-curveMove.Evaluate(elapsed))
-                );
+                startScale.z + (1 - curveMove.Evaluate(elapsed))
+            );
             scaleTweener.localScale = newScale;
             elapsed += Time.deltaTime;
-            //reset / loop:
-            if (elapsed >= 1f){
-                elapsed = 0;
+
+            if (elapsed >= 1f)
+            {
+                elapsed = 0f;
             }
         }
     }
-
 }

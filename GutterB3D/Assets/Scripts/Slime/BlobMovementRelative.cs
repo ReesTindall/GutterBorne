@@ -1,3 +1,5 @@
+//  OLD SCRIPT WITH CHARACTER CONTROLLER
+
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]

@@ -50,7 +50,7 @@ Transform:
   - {fileID: 5969062672026714537}
   - {fileID: 1194389589545996619}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &478117790665392055
 Rigidbody:
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7075d03cc0e2f4108901867f3eb3507c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeDecrease: 2
+  ratDamage: 0.05
+  personDamage: 0.5
   minScale: 0.3
   absorptionSound: {fileID: 0}
 --- !u!114 &4315548918941833516
@@ -218,8 +219,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  curveFlatten:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   jumpTweenOn: 0
   moveTweenOn: 0
+  flattenTweenOn: 0
 --- !u!114 &7322837131332519473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +337,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1
@@ -326,7 +352,7 @@ AudioSource:
   m_GameObject: {fileID: 219158198346048604}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d226115e3019d4473920256788df2707, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1243,6 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7075d03cc0e2f4108901867f3eb3507c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeDecrease: 1.1
+  ratDamage: 0.05
+  personDamage: 0.5
   minScale: 0.3
   absorptionSound: {fileID: 0}

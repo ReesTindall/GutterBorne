@@ -3,21 +3,21 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PersonWalker : MonoBehaviour
 {
-    public float walkSpeed = 2f;    // How fast they move forward
-    public float animSpeed = 1f;    // How fast the animation plays
+    public float walkSpeed = 2f;                // Speed multiplier
+    public float animSpeed = 1f;                // Animation playback speed
+    public Vector3 walkDirection = Vector3.back; // Default direction
 
     private Animator anim;
 
     void Start()
     {
-        float animSpeed = walkSpeed /2;
         anim = GetComponent<Animator>();
         anim.speed = animSpeed;
     }
 
     void Update()
     {
-        // Move forward constantly (along local Z axis)
-        transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
+        // Move in world space using custom direction
+        transform.Translate(walkDirection.normalized * walkSpeed * Time.deltaTime, Space.World);
     }
 }

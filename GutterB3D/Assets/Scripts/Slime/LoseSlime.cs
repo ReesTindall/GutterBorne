@@ -4,55 +4,131 @@ using UnityEngine.SceneManagement;
 
 public class LoseSlime : MonoBehaviour
 {
-    [Tooltip("Scale divisor applied per hit ( >1 )")]
-    public float sizeDecrease = 1.1f;
+    [Tooltip("Amount of scale lost when hit by a rat")]
+    public float ratDamage = 0.05f;
+
+    [Tooltip("Amount of scale lost when hit by a person")]
+    public float personDamage = 0.5f;
+
     public float minScale = 0.3f;                 
     public AudioClip absorptionSound;
 
-    AudioSource audioSrc;
-
-    BlobMovementRelative mover; 
+    private AudioSource audioSrc;
+    private BlobMovementPhysics mover;
+    private Slime_Scale scaleTweener;
 
     void Awake()
     {
         audioSrc = GetComponent<AudioSource>();
         if (audioSrc == null) audioSrc = gameObject.AddComponent<AudioSource>();
-        mover    = GetComponent<BlobMovementRelative>();
+
+        mover = GetComponent<BlobMovementPhysics>();
+        scaleTweener = GetComponent<Slime_Scale>();
     }
-
-	void Start(){
-		
-	}
-
-    public void TakeHit(Vector3 hitDir, float force)
+    public void TakeHit(Vector3 hitDir, float force, string damageSource)
     {
-        if (absorptionSound) audioSrc.PlayOneShot(absorptionSound);
+        if (absorptionSound)
+            audioSrc.PlayOneShot(absorptionSound);
 
         if (mover)
             mover.AddKnockback(hitDir, force);
 
-        transform.localScale /= sizeDecrease;
+        Vector3 shrinkAmount = Vector3.zero;
 
+        if (damageSource == "Rat")
+        {
+            shrinkAmount = Vector3.one * ratDamage;
+        }
+        else if (damageSource == "Person")
+        {
+            shrinkAmount = Vector3.one * personDamage;
+        }
+        else
+        {
+            Debug.LogWarning($"Unknown damage source: {damageSource}");
+        }
+
+        transform.localScale -= shrinkAmount;
+        transform.localScale = Vector3.Max(transform.localScale, Vector3.one * minScale);
 
         if (transform.localScale.x <= minScale)
         {
             StartCoroutine(Die());
         }
     }
-    System.Collections.IEnumerator Die()
+
+    IEnumerator Die()
     {
         yield return new WaitForSeconds(0.25f);    
         SceneManager.LoadScene("Death_Scene");
     }
-
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Enemy"))
-    //     {
-    //         TakeHit();
-    //     }
-    // }
 }
+
+
+
+
+//BEFORE ADDING PEOPLE STUFF: 
+
+// using System.Collections;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
+
+// public class LoseSlime : MonoBehaviour
+// {
+//     [Tooltip("Scale divisor applied per hit ( >1 )")]
+//     public float sizeDecrease = 1.1f;
+//     public float minScale = 0.3f;                 
+//     public AudioClip absorptionSound;
+
+//     AudioSource audioSrc;
+
+//     BlobMovementRelative mover; 
+
+//     void Awake()
+//     {
+//         audioSrc = GetComponent<AudioSource>();
+//         if (audioSrc == null) audioSrc = gameObject.AddComponent<AudioSource>();
+//         mover    = GetComponent<BlobMovementRelative>();
+//     }
+
+// 	void Start(){
+		
+// 	}
+
+//     public void TakeHit(Vector3 hitDir, float force)
+//     {
+//         if (absorptionSound) audioSrc.PlayOneShot(absorptionSound);
+
+//         if (mover)
+//             mover.AddKnockback(hitDir, force);
+
+//         transform.localScale /= sizeDecrease;
+
+
+//         if (transform.localScale.x <= minScale)
+//         {
+//             StartCoroutine(Die());
+//         }
+//     }
+//     System.Collections.IEnumerator Die()
+//     {
+//         yield return new WaitForSeconds(0.25f);    
+//         SceneManager.LoadScene("Death_Scene");
+//     }
+
+//     // void OnTriggerEnter(Collider other)
+//     // {
+//     //     if (other.CompareTag("Enemy"))
+//     //     {
+//     //         TakeHit();
+//     //     }
+//     // }
+// }
+
+
+
+
+
 // using System.Collections.Generic;
 // using System.Collections;
 // using UnityEngine;
