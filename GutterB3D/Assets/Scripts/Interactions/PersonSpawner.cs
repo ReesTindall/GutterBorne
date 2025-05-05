@@ -10,12 +10,13 @@ public class PersonSpawner : MonoBehaviour
     public float maxSpeed = 3f;
     public float spawnInterval = 2f;
 
+    public bool walkPositiveZ = false; // Toggle this in the Inspector
+
     public List<Material> skinMaterials;
 
     private float spawnTimer;
-
     private Queue<Material> recentlyUsed = new Queue<Material>();
-    private int cooldownCount = 3; // Number of spawns to wait before a material can be reused
+    private int cooldownCount = 3;
 
     void Update()
     {
@@ -45,9 +46,21 @@ public class PersonSpawner : MonoBehaviour
             float speed = Random.Range(minSpeed, maxSpeed);
             walker.walkSpeed = -speed;
             walker.animSpeed = speed;
+
+            if (walkPositiveZ)
+            {
+                walker.walkDirection = Vector3.forward;
+                person.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // facing +Z
+            }
+            else
+            {
+                walker.walkDirection = Vector3.back;
+                person.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // facing -Z
+            }
         }
 
-        // Randomize material (avoiding recently used ones)
+
+        // Randomize material
         if (skinMaterials.Count > 0)
         {
             Material chosenMat = GetRandomMaterial();
@@ -60,7 +73,6 @@ public class PersonSpawner : MonoBehaviour
                 skinnedRenderer.materials = newMats;
             }
 
-            // Add to cooldown queue
             recentlyUsed.Enqueue(chosenMat);
             if (recentlyUsed.Count > cooldownCount)
             {
@@ -71,14 +83,12 @@ public class PersonSpawner : MonoBehaviour
 
     Material GetRandomMaterial()
     {
-        // Try to avoid recently used materials
         List<Material> available = new List<Material>(skinMaterials);
         foreach (Material m in recentlyUsed)
         {
             available.Remove(m);
         }
 
-        // If all materials are in cooldown, allow all again
         if (available.Count == 0)
         {
             available.AddRange(skinMaterials);
