@@ -40,6 +40,7 @@ void OnTriggerEnter(Collider other)
     string incomingTag = other.tag;
     if (incomingTag == "Food") // fallback case
     {
+        transform.localScale *= sizeIncrease;
         if (absorptionSound != null)
         {
             audioSource.outputAudioMixerGroup = mixerGroup;

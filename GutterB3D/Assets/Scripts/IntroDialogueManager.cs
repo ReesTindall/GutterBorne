@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class IntroDialogueManager : MonoBehaviour
 {
@@ -23,6 +22,7 @@ public class IntroDialogueManager : MonoBehaviour
     private int currentLine = 0;
     private bool isTyping = false;
     private bool textFullyDisplayed = false;
+    private bool hasTriggered = false;           // Ensure dialogue shows only once
 
     void Start()
     {
@@ -35,11 +35,16 @@ public class IntroDialogueManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Trigger dialogue when the player enters this collider
+        // Only trigger once
+        if (hasTriggered)
+            return;
+
         if (other.CompareTag("Player"))
         {
+            hasTriggered = true;
             StartDialogue();
-            // Disable further triggering
+
+            // Optionally disable collider if present
             Collider col = GetComponent<Collider>();
             if (col != null)
                 col.enabled = false;
@@ -51,16 +56,17 @@ public class IntroDialogueManager : MonoBehaviour
     /// </summary>
     public void StartDialogue()
     {
+        if (hasTriggered && introBox.activeSelf)
+            return;
+
         currentLine = 0;
         introBox.SetActive(true);
-        enterIndicator.gameObject.SetActive(false);
-
-        // Setup first image if available
         if (dialogueImage != null && dialogueSprites != null && dialogueSprites.Length > 0)
         {
             dialogueImage.sprite = dialogueSprites[0];
             dialogueImage.gameObject.SetActive(true);
         }
+        enterIndicator.gameObject.SetActive(false);
 
         StartCoroutine(TypeText(dialogueLines[currentLine]));
     }
@@ -72,10 +78,10 @@ public class IntroDialogueManager : MonoBehaviour
             if (isTyping)
             {
                 StopAllCoroutines();
-                introText.text = dialogueLines[currentLine]; // Instantly display full line
+                introText.text = dialogueLines[currentLine];
                 isTyping = false;
                 textFullyDisplayed = true;
-                StartCoroutine(FadeInEnterIndicator());   // Show enter text with fade-in
+                StartCoroutine(FadeInEnterIndicator());
             }
             else if (textFullyDisplayed)
             {
@@ -89,7 +95,6 @@ public class IntroDialogueManager : MonoBehaviour
         currentLine++;
         if (currentLine < dialogueLines.Length)
         {
-            // Update sprite for this line
             if (dialogueImage != null && dialogueSprites != null && dialogueSprites.Length > currentLine)
             {
                 dialogueImage.sprite = dialogueSprites[currentLine];
@@ -144,10 +149,18 @@ public class IntroDialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        // Simply hide the dialogue UI so gameplay continues
         introBox.SetActive(false);
-        SceneManager.LoadScene("Level1");
+        if (dialogueImage != null)
+            dialogueImage.gameObject.SetActive(false);
+        enterIndicator.gameObject.SetActive(false);
+
+        // Reset typing flags
+        isTyping = false;
+        textFullyDisplayed = false;
     }
 }
+
 
 // using System.Collections;
 // using UnityEngine;
