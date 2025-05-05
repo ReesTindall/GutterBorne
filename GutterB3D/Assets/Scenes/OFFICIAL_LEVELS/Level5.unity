@@ -2657,13 +2657,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 66381430455364455, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 219158198346048604, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Name
       value: Blob Player
       objectReference: {fileID: 0}
     - target: {fileID: 665723373941132649, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 924104200864097822, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: counter
@@ -2671,15 +2675,19 @@ PrefabInstance:
       objectReference: {fileID: 41599612}
     - target: {fileID: 1279691215862771197, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: trashCounter
       value: 
       objectReference: {fileID: 41599612}
+    - target: {fileID: 2698071271635999472, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4315548918941833516, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4315548918941833516, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: moveSpeed

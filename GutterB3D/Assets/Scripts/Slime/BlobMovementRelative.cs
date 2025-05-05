@@ -41,6 +41,20 @@ public class BlobMovementRelative : MonoBehaviour
 
 
         controller.SimpleMove(move * moveSpeed);
+
+        // Check if there is any movement input
+        bool isMoving = move.magnitude > 0 || externalVelocity.sqrMagnitude > 0.01f;
+
+        // Toggle moveTweenOn based on whether the slime is moving
+        Slime_Scale slimeScale = GetComponent<Slime_Scale>();
+        if (isMoving)
+        {
+            slimeScale.moveTweenOn = true;
+        }
+        else
+        {
+            slimeScale.moveTweenOn = false;
+        }
     }
     public void AddKnockback(Vector3 dir, float force)
     {

@@ -45,13 +45,20 @@ public class PersonSpawner : MonoBehaviour
         }
 
         // Randomize material
+        // Randomize material
         if (skinMaterials.Count > 0)
         {
-            Material chosenMat = skinMaterials[Random.Range(0, skinMaterials.Count)];
-            Renderer renderer = person.GetComponentInChildren<Renderer>();
-            if (renderer != null)
+            SkinnedMeshRenderer skinnedRenderer = person.GetComponentInChildren<SkinnedMeshRenderer>();
+            if (skinnedRenderer != null)
             {
-                renderer.material = chosenMat;
+                // Duplicate current materials array
+                Material[] newMats = skinnedRenderer.materials;
+
+                // Replace the first material slot (usually the body/skin) with a random one
+                newMats[0] = new Material(skinMaterials[Random.Range(0, skinMaterials.Count)]);
+
+                // Assign the new material array back
+                skinnedRenderer.materials = newMats;
             }
         }
     }
