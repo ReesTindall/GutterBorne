@@ -20,6 +20,7 @@ TagManager:
   - SolidWorld
   - PlayerAttack
   - Canvas
+  - Human
   layers:
   - Default
   - TransparentFX
