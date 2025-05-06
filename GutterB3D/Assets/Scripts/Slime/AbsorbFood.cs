@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class AbsorbFood : MonoBehaviour
 {
-    public float sizeIncrease = 1.1f;
+    public float sizeIncrease = 0.05f;
     public Transform centerPnt;
     public AudioClip absorptionSound;
     private AudioSource audioSource;
