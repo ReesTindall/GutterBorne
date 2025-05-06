@@ -16,8 +16,9 @@ public class TrashExpeller : MonoBehaviour
     public Transform centerTarget;
     public float targetSpread = 2f;
 
-    [Header("UI Prompt")]
-    public GameObject promptUI;
+    [Header("UI Prompt Manager Object")]
+
+    public TrashPromptManager promptManager;
 
     private bool playerInZone = false;
     private bool hasExpelled = false;
@@ -29,9 +30,11 @@ public class TrashExpeller : MonoBehaviour
         {
             StartCoroutine(SpewTrash());
             hasExpelled = true;
-            if (promptUI != null)
-                promptUI.SetActive(false);
+
+            if (promptManager != null)
+                promptManager.ConfirmExpel(); // prevents it from coming back
         }
+
     }
 
     private IEnumerator SpewTrash()
@@ -94,8 +97,9 @@ public class TrashExpeller : MonoBehaviour
         {
             playerInZone = true;
             slimeTransform = other.transform;
-            if (promptUI != null)
-                promptUI.SetActive(true);
+
+            if (promptManager != null)
+                promptManager.ShowPrompt(); // will ignore if E has been pressed
         }
     }
 
@@ -104,8 +108,10 @@ public class TrashExpeller : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInZone = false;
-            if (promptUI != null)
-                promptUI.SetActive(false);
+
+            if (promptManager != null)
+                promptManager.HidePrompt();
         }
     }
+
 }
