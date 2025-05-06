@@ -41,6 +41,7 @@ public class GameHandler : MonoBehaviour
 	}
 
       public void StartGame() {
+            slimeSize = 1f; // for if you play again in same game
             SceneManager.LoadScene("Level1");
       }
 
