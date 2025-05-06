@@ -10,13 +10,14 @@ public class TrashExpeller : MonoBehaviour
     public int trashCount = 10;
     public float interval = 0.1f;
     public float arcHeight = 3f;
+    public float trashArcTime = 2f; // NEW: how long each trash piece takes to reach the pool
 
     [Header("Target Area")]
     public Transform centerTarget;
     public float targetSpread = 2f;
 
     [Header("UI Prompt")]
-    public GameObject promptUI; // Set a UI panel or text in the scene
+    public GameObject promptUI;
 
     private bool playerInZone = false;
     private bool hasExpelled = false;
@@ -35,6 +36,13 @@ public class TrashExpeller : MonoBehaviour
 
     private IEnumerator SpewTrash()
     {
+        // Optional: activate movement tweening
+        Slime_Scale scaler = slimeTransform?.GetComponent<Slime_Scale>();
+        if (scaler != null)
+        {
+            scaler.moveTweenOn = true;
+        }
+
         for (int i = 0; i < trashCount; i++)
         {
             if (trashPrefabs.Count == 0 || slimeTransform == null || centerTarget == null)
@@ -49,15 +57,21 @@ public class TrashExpeller : MonoBehaviour
                 Random.Range(-targetSpread, targetSpread)
             );
 
-            StartCoroutine(ArcMove(trash, slimeTransform.position, randomTarget, arcHeight));
+            StartCoroutine(ArcMove(trash, slimeTransform.position, randomTarget, arcHeight, trashArcTime));
 
             yield return new WaitForSeconds(interval);
         }
+
+        // Optional: stop movement tween after final piece
+        if (scaler != null)
+        {
+            yield return new WaitForSeconds(0.5f); // brief hold after last piece
+            scaler.moveTweenOn = false;
+        }
     }
 
-    private IEnumerator ArcMove(GameObject obj, Vector3 start, Vector3 end, float height)
+    private IEnumerator ArcMove(GameObject obj, Vector3 start, Vector3 end, float height, float duration)
     {
-        float duration = 1f;
         float time = 0f;
 
         while (time < duration)
