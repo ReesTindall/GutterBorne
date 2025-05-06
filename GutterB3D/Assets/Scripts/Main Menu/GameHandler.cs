@@ -68,11 +68,37 @@ public class GameHandler : MonoBehaviour
             SceneManager.LoadScene("Option_Menu");
       }
 
-      public void Retry() {
-            Debug.Log("Before slime size change:" + slimeSize);
-            slimeSize = prevLevelSlimeSize; //load prev slime size
+    //public void Retry() {
+    //      Time.timeScale = 1f;
+    //      Debug.Log("Before slime size change:" + slimeSize);
+    //      slimeSize = prevLevelSlimeSize; //load prev slime size
+    //      bar.SetSize(0f); //updates UI
+    //      Debug.Log("After slime size change:" + slimeSize);
+    //      SceneManager.LoadScene("Level" + levelNumber.ToString());
+    //}
+
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        Debug.Log("Before slime size change:" + slimeSize);
+        slimeSize = prevLevelSlimeSize;
+
+        // Find bar dynamically if it hasn't been assigned
+        if (bar == null)
+        {
+            bar = FindObjectOfType<SlimeSizeBar>();
+        }
+
+        if (bar != null)
+        {
             bar.SetSize(0f); //updates UI
-            Debug.Log("After slime size change:" + slimeSize);
-            SceneManager.LoadScene("Level" + levelNumber.ToString());
-      }
+        }
+        else
+        {
+            Debug.LogWarning("SlimeSizeBar not found in scene!");
+        }
+
+        Debug.Log("After slime size change:" + slimeSize);
+        SceneManager.LoadScene("Level" + levelNumber.ToString());
+    }
 }
