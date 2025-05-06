@@ -1859,6 +1859,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: sizeIncrease
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 44608616704419359, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: trashPrefabs.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1918,10 +1922,22 @@ PrefabInstance:
       propertyPath: trashCounter
       value: 
       objectReference: {fileID: 1288626242}
+    - target: {fileID: 2698071271635999472, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4381808744749081758, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: divineCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6395953800066367556, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: splatPrefab
+      value: 
+      objectReference: {fileID: 5974643681028892591, guid: 0c45d39fdcb624275a5d74c1343c8c08, type: 3}
+    - target: {fileID: 6395953800066367556, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: absorptionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f69330f536bf463e84978e9b7a01e04, type: 3}
     - target: {fileID: 8877427860083156673, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_RootOrder
       value: 5

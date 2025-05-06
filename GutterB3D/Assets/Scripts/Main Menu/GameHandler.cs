@@ -69,8 +69,10 @@ public class GameHandler : MonoBehaviour
       }
 
       public void Retry() {
+            Debug.Log("Before slime size change:" + slimeSize);
             slimeSize = prevLevelSlimeSize; //load prev slime size
             bar.SetSize(0f); //updates UI
+            Debug.Log("After slime size change:" + slimeSize);
             SceneManager.LoadScene("Level" + levelNumber.ToString());
       }
 }
