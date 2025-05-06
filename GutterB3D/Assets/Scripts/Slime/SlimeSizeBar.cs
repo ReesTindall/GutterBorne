@@ -35,7 +35,7 @@ public class SlimeSizeBar : MonoBehaviour
         }
     }
 
-    void SetSize(float sizeChange) {
+    public void SetSize(float sizeChange) {
         GameHandler.slimeSize += sizeChange;
         GameHandler.slimeSize = Mathf.Clamp(GameHandler.slimeSize, 0, handler.maxSize); //will not go past range
         

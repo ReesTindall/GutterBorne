@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class AbsorbFood : MonoBehaviour
 {
-    public float sizeIncrease = 0.05f;
+    public float sizeIncrease = 0.02f;
     public Transform centerPnt;
     public AudioClip absorptionSound;
     private AudioSource audioSource;
@@ -50,6 +50,7 @@ public class AbsorbFood : MonoBehaviour
             Vector3 growAmount = Vector3.zero;
             growAmount = Vector3.one * sizeIncrease;
             transform.localScale += growAmount;
+            // transform.localScale = Vector3.Max(transform.localScale, Vector3.one * minScale);
             Destroy(other.gameObject);
         }
     }

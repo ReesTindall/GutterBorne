@@ -11,7 +11,8 @@ public class GameHandler : MonoBehaviour
 
       public static float slimeSize = 1f;
       public float maxSize = 100f;
-      private float prevLevelSlimeSize = 1f;
+      private static float prevLevelSlimeSize = 1f;
+      private SlimeSizeBar bar;
 
 	//for cutscenes:
 	public static int levelNumber = 1;
@@ -69,7 +70,7 @@ public class GameHandler : MonoBehaviour
 
       public void Retry() {
             slimeSize = prevLevelSlimeSize; //load prev slime size
-            SlimeSizeBar.SetSize(0f); //updates UI
+            bar.SetSize(0f); //updates UI
             SceneManager.LoadScene("Level" + levelNumber.ToString());
       }
 }
