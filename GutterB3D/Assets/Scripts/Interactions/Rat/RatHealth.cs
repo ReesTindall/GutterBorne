@@ -9,6 +9,10 @@ public class RatHealth : MonoBehaviour
     Animator anim;
     Collider[] colliders;             // so we can disable hits
 
+    void Start(){
+        
+    }
+
     void Awake()
     {
         hp = maxHP;
