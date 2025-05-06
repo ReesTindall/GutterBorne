@@ -13,6 +13,12 @@ public class LoseSlime : MonoBehaviour
     public float minScale = 0.3f;                 
     public AudioClip absorptionSound;
 
+    public GameObject splatPrefab;
+
+    private float lastSplatTime = -10f;
+    public float splatCooldown = 1f; // seconds between allowed splats
+
+
     private AudioSource audioSrc;
     private BlobMovementPhysics mover;
     private Slime_Scale scaleTweener;
@@ -51,6 +57,26 @@ public class LoseSlime : MonoBehaviour
         transform.localScale -= shrinkAmount;
         transform.localScale = Vector3.Max(transform.localScale, Vector3.one * minScale);
         scaleTweener.FlashRed();
+
+
+        if (splatPrefab != null && Time.time - lastSplatTime >= splatCooldown)
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, 2f))
+            {
+                Quaternion flatRotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                GameObject splat = Instantiate(
+                    splatPrefab,
+                    hitInfo.point + hitInfo.normal * 0.01f,
+                    flatRotation
+                );
+
+                float scaleFactor = transform.localScale.x * 30;
+                splat.transform.localScale = Vector3.one * scaleFactor;
+                splat.transform.Rotate(Vector3.up, Random.Range(0f, 360f));
+
+                lastSplatTime = Time.time;
+            }
+        }
 
         if (transform.localScale.x <= minScale)
         {
