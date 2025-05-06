@@ -3729,14 +3729,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
-    - target: {fileID: 690033680323820494, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
-      propertyPath: useFireball
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690033680323820494, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
-      propertyPath: fireballPrefab
-      value: 
-      objectReference: {fileID: 5903502143265569109, guid: 209059624d3ee403f9572a1743537410, type: 3}
     - target: {fileID: 924104200864097822, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: counter
       value: 
@@ -3745,14 +3737,6 @@ PrefabInstance:
       propertyPath: trashCounter
       value: 
       objectReference: {fileID: 1288626242}
-    - target: {fileID: 2698071271635999472, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395953800066367556, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
-      propertyPath: splatPrefab
-      value: 
-      objectReference: {fileID: 5974643681028892591, guid: 0c45d39fdcb624275a5d74c1343c8c08, type: 3}
     - target: {fileID: 8877427860083156673, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1233409981949434285
 MeshFilter:
@@ -119,14 +119,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashPrefabs:
-  - {fileID: 4883715780125563703, guid: c3b3d9f07216249808eb963a0c36d05f, type: 3}
+  - {fileID: 4883715780125563703, guid: 45de05007f0a448c1883805071d6bd10, type: 3}
   - {fileID: 6450928126857410829, guid: 88a6f4c59de8d45168e421e2e8a06982, type: 3}
   - {fileID: 6749128721214738845, guid: c63fb6d122c8c464cbb99f02a6aac9b3, type: 3}
   - {fileID: 458041014958797346, guid: d2e6a9af9ffaa48799f95d099438424c, type: 3}
   trashCount: 15
-  interval: 1
+  interval: 0.5
   arcHeight: 3
   trashArcTime: 2
   centerTarget: {fileID: 0}
   targetSpread: 2
-  promptUI: {fileID: 0}
+  promptManager: {fileID: 0}

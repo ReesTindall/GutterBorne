@@ -75,7 +75,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 80
@@ -92,12 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d585452988c4681924ffc65023412c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeIncrease: 1.1
+  sizeIncrease: 0.1
   centerPnt: {fileID: 6957751342577238404}
   absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
   mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
-  myFood: []
-  trashPrefabs: []
 --- !u!114 &6395953800066367556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +112,8 @@ MonoBehaviour:
   personDamage: 0.5
   minScale: 0.3
   absorptionSound: {fileID: 0}
+  splatPrefab: {fileID: 5974643681028892591, guid: 0c45d39fdcb624275a5d74c1343c8c08, type: 3}
+  splatCooldown: 0.5
 --- !u!114 &4315548918941833516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771de2eaca09d44f5a712db13e74fbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   rotationSpeed: 400
   dampingDrag: 3
   jumpForce: 5
@@ -268,7 +268,7 @@ MonoBehaviour:
   fireBase: {fileID: 5969062672026714537}
   firePoint: {fileID: 3798111099364686831}
   slimeballPrefab: {fileID: 5903502143265569109, guid: 5e46ec1c46ef64596a812a5904537a0b, type: 3}
-  fireballPrefab: {fileID: 6196260898054373304, guid: b3c2b87f75596c049b9c0af8e3e1908c, type: 3}
+  fireballPrefab: {fileID: 5903502143265569109, guid: 209059624d3ee403f9572a1743537410, type: 3}
   projectileSpeed: 20
   attackRate: 2
   useFireball: 0
@@ -416,7 +416,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Height: 0
+  m_Height: 0.3
   m_Radius: 0.27
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -446,15 +446,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219158198346048604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 470ab64150fcd774c90451bfeddb7b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dampingDrag: 0.1
   jumpForce: 5
-  jumpSound: {fileID: 0}
-  mixerGroup: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 7a268f2837dbc4b538fe1fea0e3908e0, type: 3}
+  mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
 --- !u!114 &8967227614857456129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,3 +1276,5 @@ MonoBehaviour:
   personDamage: 0.5
   minScale: 0.3
   absorptionSound: {fileID: 0}
+  splatPrefab: {fileID: 0}
+  splatCooldown: 0.5
