@@ -1405,9 +1405,9 @@ MonoBehaviour:
   dialogueImage: {fileID: 69881254}
   dialogueLines:
   - Hey friend, great job surviving the mean streets of Tinkerville.
-  - All those rats you slimed earlier today must've stuck together to great an even
-    greater mess of rats which you now must defeat to become the DIVINE SLIME.
-  - 'I think you are ready now for the greatest weapon of all: FIRE. Now your slime-balls
+  - All those rats you slimed earlier today must've stuck together to create an even
+    greater mass of rats which you now must defeat to become the DIVINE SLIME.
+  - 'I think you are ready now for the weapon of all weapons: FIRE. Now your slime-balls
     (which are flammable) will be set ablaze.'
   - Head towards that tunnel and take this lighter. You've got this goo-man.
   dialogueSprites: []
