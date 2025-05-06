@@ -43,7 +43,7 @@ public class GameHandler : MonoBehaviour
       public void StartGame() {
             slimeSize = 1f; // for if you play again in same game
             levelNumber = 1;
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("IntroFamilyDeath");
       }
 
       // Return to MainMenu
