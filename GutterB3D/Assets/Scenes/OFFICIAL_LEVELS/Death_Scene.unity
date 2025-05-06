@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641263, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1047,7 +1047,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650634140596248456
 MonoBehaviour:
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 8376992909942197641}
   - component: {fileID: 7834363912448898226}
   m_Layer: 5
-  m_Name: Start_Button
+  m_Name: Retry_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1729,7 +1729,7 @@ GameObject:
   - component: {fileID: 5434671085945391024}
   - component: {fileID: 8637380928273422031}
   m_Layer: 5
-  m_Name: Option_Button
+  m_Name: MainMenu_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,7 +1961,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
-        m_MethodName: Options
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2230,7 +2230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: START
+  m_Text: RETRY
 --- !u!224 &7017460519430646314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2326,7 +2326,7 @@ GameObject:
   - component: {fileID: 7835769463244867309}
   - component: {fileID: 5041653785389457601}
   m_Layer: 5
-  m_Name: Option_Text
+  m_Name: MainMenu_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2485,7 +2485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: MAIN MENU
 --- !u!114 &7850181561751001435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2601,7 +2601,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3205688660136041385, guid: 775d5fea603024f73b3383093e1c408e, type: 3}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
