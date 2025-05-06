@@ -11,6 +11,8 @@ public class RatKingController : MonoBehaviour
     public float timeBetweenWaves = 5f;
     public int   ratsPerWave     = 3;
 
+    int   activeRats; 
+
     List<RatController> ring = new List<RatController>();
     bool attacking;
 
@@ -19,7 +21,13 @@ public class RatKingController : MonoBehaviour
         foreach (Transform child in transform)
         {
             RatController rc = child.GetComponent<RatController>();
-            if (rc) { ring.Add(rc); rc.enabled = false; }    // keep them dormant
+            if (rc)
+            {
+                rc.enabled = false;               // dormant in ring
+                rc.king    = this;                // NEW (see RatController)
+                rc.GetComponent<RatHealth>().invulnerable = true;
+                ring.Add(rc);
+            }
         }
     }
 
@@ -35,8 +43,11 @@ public class RatKingController : MonoBehaviour
     {
         while (ring.Count > 0)
         {
+            LaunchWave();                         // ← launch immediately
+            while (activeRats > 0)                // wait until they all die
+                yield return null;
+
             yield return new WaitForSeconds(timeBetweenWaves);
-            LaunchWave();
         }
     }
 
@@ -46,19 +57,15 @@ public class RatKingController : MonoBehaviour
 
         for (int i = 0; i < launchCount; i++)
         {
-            /* pick a random rat from the ring */
             int idx = Random.Range(0, ring.Count);
             RatController rc = ring[idx];
             ring.RemoveAt(idx);
 
-            /* detach from the ring so it stops spinning */
             rc.transform.parent = null;
-
-            /* enable its AI */
+            rc.GetComponent<RatHealth>().invulnerable = false;
             rc.enabled = true;
-
-            /* optional: give it a short forward impulse so it shoots out */
-            rc.transform.position += rc.transform.forward * 0.5f;
+            activeRats++;                         // track alive attackers
         }
     }
+     public void NotifyRatDead() => activeRats--;
 }

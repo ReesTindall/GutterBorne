@@ -3,6 +3,7 @@ using UnityEngine;
 public class RatHealth : MonoBehaviour
 {
     public int maxHP = 3;
+    public bool invulnerable;
     public float destroyDelay = 2f;   // length of RatDeath clip
     int hp;
     Animator anim;
@@ -17,6 +18,7 @@ public class RatHealth : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        if (invulnerable) return;
         if (hp <= 0) return;
         hp -= dmg;
 

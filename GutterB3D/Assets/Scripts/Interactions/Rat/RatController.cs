@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RatController : MonoBehaviour
 {
+    [HideInInspector] public RatKingController king; 
     /* ---------- Patrol ------------------------------- */
     [Header("Patrol")]
     public float patrolRadius = 4f;
@@ -56,7 +57,13 @@ public class RatController : MonoBehaviour
     }
 
     /* ================================================== */
-    void FixedUpdate()
+    
+    void OnDestroy()
+    {
+        king?.NotifyRatDead();
+    }
+    
+        void FixedUpdate()
     {
         if (!player) return;
 
