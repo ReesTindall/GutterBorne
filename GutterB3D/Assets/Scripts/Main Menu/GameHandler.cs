@@ -64,4 +64,8 @@ public class GameHandler : MonoBehaviour
             Time.timeScale = 1f;
             SceneManager.LoadScene("Option_Menu");
       }
+
+      public void Retry() {
+            SceneManager.LoadScene("Level" + levelNumber.ToString());
+      }
 }
