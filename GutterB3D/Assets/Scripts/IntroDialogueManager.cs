@@ -15,6 +15,9 @@ public class IntroDialogueManager : MonoBehaviour
     public string[] dialogueLines;               // Array of dialogue lines
     public Sprite[] dialogueSprites;             // Array of sprites corresponding to each line
 
+    [Header("Optional Objects")]
+    public GameObject objectToDestroy;
+
     [Header("Timings")]
     public float textSpeed = 0.05f;              // Speed of the typewriter effect
     public float fadeDuration = 0.5f;            // Duration of fade-in effect
@@ -158,6 +161,10 @@ public class IntroDialogueManager : MonoBehaviour
         // Reset typing flags
         isTyping = false;
         textFullyDisplayed = false;
+        if (objectToDestroy != null)
+        {
+            Destroy(objectToDestroy);
+        }
     }
 }
 
