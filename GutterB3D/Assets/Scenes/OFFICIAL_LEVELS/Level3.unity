@@ -5615,6 +5615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 924104200864097822, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1987041974}
     - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: trashCounter
       value: 
@@ -7634,7 +7638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: totalGum
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: currPaper
