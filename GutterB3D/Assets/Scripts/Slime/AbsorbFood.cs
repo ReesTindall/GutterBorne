@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class AbsorbFood : MonoBehaviour
 {
-    public float sizeIncrease = 1.1f;
+    public float sizeIncrease = 0.05f;
     public Transform centerPnt;
     public AudioClip absorptionSound;
     private AudioSource audioSource;
@@ -35,21 +35,24 @@ public class AbsorbFood : MonoBehaviour
     void FixedUpdate(){
         centerPnt.Rotate (new Vector3 (0, 30, 0) * Time.fixedDeltaTime);
     }
-void OnTriggerEnter(Collider other)
-{
-    string incomingTag = other.tag;
-    if (incomingTag == "Food") // fallback case
+
+    void OnTriggerEnter(Collider other)
     {
-        transform.localScale *= sizeIncrease;
-        if (absorptionSound != null)
+        string incomingTag = other.tag;
+
+        if (incomingTag == "Food")
         {
-            audioSource.outputAudioMixerGroup = mixerGroup;
-            audioSource.PlayOneShot(absorptionSound);
+            if (absorptionSound != null)
+            {
+                audioSource.outputAudioMixerGroup = mixerGroup;
+                audioSource.PlayOneShot(absorptionSound);
+            }
+            Vector3 growAmount = Vector3.zero;
+            growAmount = Vector3.one * sizeIncrease;
+            transform.localScale += growAmount;
+            Destroy(other.gameObject);
         }
-        Debug.Log("HEREEEEEE");
-        Destroy(other.gameObject);
     }
-}
 
 // public class AbsorbFood : MonoBehaviour
 // {
