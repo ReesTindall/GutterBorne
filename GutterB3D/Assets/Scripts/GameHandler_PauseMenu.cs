@@ -55,8 +55,8 @@ public class GameHandler_PauseMenu : MonoBehaviour {
                 pauseMenuUI.SetActive(false);
                 Time.timeScale = 1f;
                 GameisPaused = false;
-                Cursor.visible = false;                    
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.visible = false;                    
+                //Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void SetLevel(float sliderValue){
