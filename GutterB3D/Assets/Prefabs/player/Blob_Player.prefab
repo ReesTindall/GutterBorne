@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7075d03cc0e2f4108901867f3eb3507c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratDamage: 0.1
+  ratDamage: 0.25
   personDamage: 0.5
   minScale: 0.3
   absorptionSound: {fileID: 0}

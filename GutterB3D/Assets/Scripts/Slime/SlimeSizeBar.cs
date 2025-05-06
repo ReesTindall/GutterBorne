@@ -31,7 +31,7 @@ public class SlimeSizeBar : MonoBehaviour
         }  
 
         if(other.CompareTag("Enemy")){
-            SetSize(-1f);
+            SetSize(-2.5f);
         }
 
         if(other.CompareTag("Human"))
