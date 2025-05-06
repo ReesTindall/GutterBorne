@@ -4165,14 +4165,6 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5966597014955828151, guid: 88a6f4c59de8d45168e421e2e8a06982, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.050000016
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966597014955828151, guid: 88a6f4c59de8d45168e421e2e8a06982, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.050000023
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966597014955828151, guid: 88a6f4c59de8d45168e421e2e8a06982, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.061607
       objectReference: {fileID: 0}
@@ -5938,6 +5930,26 @@ PrefabInstance:
     - target: {fileID: 4989291301805654505, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: m_Name
       value: CANVAS_level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+      propertyPath: totalCup
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+      propertyPath: totalGum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+      propertyPath: currPaper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+      propertyPath: totalPaper
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+      propertyPath: totalBanana
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8464428761254936817, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
       propertyPath: m_Pivot.x
