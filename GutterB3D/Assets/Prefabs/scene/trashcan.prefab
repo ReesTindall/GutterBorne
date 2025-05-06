@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 78c2aa18a26684c3392533bb4c91b460, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78c2aa18a26684c3392533bb4c91b460, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78c2aa18a26684c3392533bb4c91b460, type: 3}
       propertyPath: m_Name
-      value: trashcan Variant
+      value: trashcan
       objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 78c2aa18a26684c3392533bb4c91b460, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -135,6 +135,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.6
-  m_Height: 8
+  m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}

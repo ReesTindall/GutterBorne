@@ -10,7 +10,7 @@ public class GameHandler : MonoBehaviour
 	//public static GameHandler handler;
 
       public static float slimeSize = 1f;
-      public float maxSize = 100f;
+      public float maxSize = 39f;
       private static float prevLevelSlimeSize = 1f;
       private SlimeSizeBar bar;
 

@@ -42,6 +42,7 @@ public class BlobMovementPhysics : MonoBehaviour
 
     void Update()
     {
+        if (GameHandler_PauseMenu.GameisPaused) return; 
         // Rotate slime with mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX);
@@ -64,6 +65,7 @@ public class BlobMovementPhysics : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameHandler_PauseMenu.GameisPaused) return; 
         // Apply movement
         Vector3 velocity = (moveInput * moveSpeed) + externalVelocity;
         Vector3 targetPos = rb.position + velocity * Time.fixedDeltaTime;

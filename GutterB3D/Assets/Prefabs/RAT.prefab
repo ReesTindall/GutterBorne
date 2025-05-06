@@ -216,7 +216,7 @@ Transform:
   - {fileID: 3254856523542886801}
   - {fileID: 1065612638179526603}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2212300896197981312
 Rigidbody:
@@ -283,12 +283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08e4e5efddd640069eb42b0a5a2c20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  king: {fileID: 0}
   patrolRadius: 4
   patrolSpeed: 1
-  chaseSpeed: 1.5
+  chaseSpeed: 1
   chaseRange: 20
   attackRange: 0.5
-  attackCooldown: 1
+  attackCooldown: 3
   sniffDuration: 2.5
   pawCollider: {fileID: 2337878137484089133}
 --- !u!114 &2835587021102917540
@@ -304,7 +305,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
+  invulnerable: 0
   destroyDelay: 2
+  squeakClip: {fileID: 8300000, guid: 7dcc54e55c83742488085b6ca3d2a147, type: 3}
+  flashDuration: 0.2
 --- !u!136 &3294020843522572278
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 902652587226059072}
   m_Layer: 0
   m_Name: SIMPLEMAN
-  m_TagString: Enemy
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

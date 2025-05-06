@@ -20,6 +20,8 @@ TagManager:
   - SolidWorld
   - PlayerAttack
   - Canvas
+  - Human
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX
@@ -29,8 +31,8 @@ TagManager:
   - UI
   - WaterAnim
   - SolidWorld
-  - 
-  - 
+  - Rat
+  - RatWall
   - 
   - 
   - 
