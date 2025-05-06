@@ -21,6 +21,7 @@ TagManager:
   - PlayerAttack
   - Canvas
   - Human
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX
