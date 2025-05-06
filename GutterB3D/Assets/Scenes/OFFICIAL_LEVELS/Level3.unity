@@ -4230,6 +4230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1961207536670326959, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
+      propertyPath: trashCounter
+      value: 
+      objectReference: {fileID: 1987041974}
     - target: {fileID: 8877427860083156673, guid: bdf858e73b47e410387390f885a0b04f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6040,6 +6044,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+--- !u!114 &1987041974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6236135927769159007, guid: 9830f0d756fc94955814d693fc05c22b, type: 3}
+  m_PrefabInstance: {fileID: 1987041973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faebd57cd90024cdc8ceec44cc0917d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1991470441
 PrefabInstance:
   m_ObjectHideFlags: 0
