@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4374887, g: 0.48531252, b: 0.5655864, a: 1}
+  m_IndirectSpecularColor: {r: 0.4374884, g: 0.48531252, b: 0.5655862, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1287,7 +1287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663468225048815906, guid: 2d116b32dac1449d1b087e8d970f70ff, type: 3}
       propertyPath: walkNegativeX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8519563090978669174, guid: 2d116b32dac1449d1b087e8d970f70ff, type: 3}
       propertyPath: m_Name
@@ -4062,11 +4062,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663468225048815906, guid: 2d116b32dac1449d1b087e8d970f70ff, type: 3}
       propertyPath: walkNegativeX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519563090978669174, guid: 2d116b32dac1449d1b087e8d970f70ff, type: 3}
       propertyPath: m_Name
       value: PersonSpawnerX (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519563090978669174, guid: 2d116b32dac1449d1b087e8d970f70ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
