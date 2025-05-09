@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641263, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -639,7 +639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100423828 stripped
 GameObject:
@@ -1219,7 +1219,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 863785ab5dd814f33af7c33c970036fb, type: 2}
     - target: {fileID: 6397432785153059534, guid: ab0149edb48a144b9976dc3b2ffdf425, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6397432785153059534, guid: ab0149edb48a144b9976dc3b2ffdf425, type: 3}
       propertyPath: m_LocalScale.x
@@ -1336,7 +1336,7 @@ MonoBehaviour:
     to your family. It's hard being the little guy.
   - ...BUT, I know something that can give you the chance to see your family again...
   - There are rumors of a divinity pool in a special sewer, where you can gain godly
-    powers and bring you family back.
+    powers like, say, bringing back loved ones.
   - BUT, you must venture to the dangerous above-world in order to find this sewer.
   - Make sure you collect all the trash that is needed for each above-world quest
     to be granted safe passage through the next sewer.
@@ -1673,7 +1673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 337794648610990171, guid: c284d63a091854b618b4cf3823936ca7, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 337794648610990171, guid: c284d63a091854b618b4cf3823936ca7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3170,7 +3170,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1114909459
 MonoBehaviour:
@@ -3382,7 +3382,7 @@ Transform:
   - {fileID: 1976987455}
   - {fileID: 595014752}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197703876
 GameObject:
@@ -3487,7 +3487,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90.109}
 --- !u!1001 &1253986405
 PrefabInstance:
@@ -4238,7 +4238,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90.109}
 --- !u!114 &1451950208 stripped
 MonoBehaviour:
@@ -4820,7 +4820,7 @@ Transform:
   - {fileID: 1717067302}
   - {fileID: 442624142}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1668375028
 PrefabInstance:
@@ -5811,13 +5811,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food_OBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 1125650350450826832, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125650350450826832, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.038952302
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125650350450826832, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.107055
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273770488722631723, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.48928106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273770488722631723, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_Size.z
+      value: 0.46518242
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273770488722631723, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_Center.x
+      value: -0.044889748
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273770488722631723, guid: 1822f6b899e0449709a422e50117908f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.006242685
+      objectReference: {fileID: 0}
     - target: {fileID: 1447327700289289888, guid: 1822f6b899e0449709a422e50117908f, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447327700289289888, guid: 1822f6b899e0449709a422e50117908f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 1447327700289289888, guid: 1822f6b899e0449709a422e50117908f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5857,10 +5881,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1447327700289289888, guid: 1822f6b899e0449709a422e50117908f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1543745123622432174, guid: 1822f6b899e0449709a422e50117908f, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5971,7 +5991,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1957482659
 GameObject:
@@ -6690,7 +6710,7 @@ Transform:
   - {fileID: 2003350116}
   - {fileID: 1957482660}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132687410
 GameObject:
@@ -7151,7 +7171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6743145920059815493, guid: 745cb7c4b93f94f64a2886dcf4c35a01, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6743145920059815493, guid: 745cb7c4b93f94f64a2886dcf4c35a01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7224,7 +7244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3056369862459095430, guid: 99b5fc2ac635b467c90718aa5c7b776b, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3056369862459095430, guid: 99b5fc2ac635b467c90718aa5c7b776b, type: 3}
       propertyPath: m_LocalPosition.x

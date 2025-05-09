@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19586805, g: 0.17007631, b: 0.12459011, a: 1}
+  m_IndirectSpecularColor: {r: 0.19586822, g: 0.17007634, b: 0.12459036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   dialogueImage: {fileID: 69881254}
   dialogueLines:
   - Hey friend, great job surviving the mean streets of Tinkerville.
-  - All those rats you slimed earlier today must've stuck together to great an even
+  - All those rats you slimed earlier today must've stuck together to form an even
     greater mess of rats which you now must defeat to become the DIVINE SLIME.
   - 'I think you are ready now for the greatest weapon of all: FIRE. Now your slime-balls
     (which are flammable) will be set ablaze.'
