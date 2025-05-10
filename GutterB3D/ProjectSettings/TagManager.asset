@@ -3,25 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - GameHandler
-  - Food
-  - Enemy
-  - DivineSlime
-  - Entrance
-  - Banana
-  - Paper
-  - Cup
-  - Gum
-  - forward
-  - LR
-  - jump
-  - listen2rat
-  - SolidWorld
-  - PlayerAttack
-  - Canvas
-  - Human
-  - PauseMenuSlider
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -29,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - WaterAnim
-  - SolidWorld
-  - Rat
-  - RatWall
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

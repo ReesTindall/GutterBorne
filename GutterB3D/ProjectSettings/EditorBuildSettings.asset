@@ -4,47 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Main_Menu.unity
-    guid: 0842f26a50f2c405a8c3923fd2cc49bc
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level1.unity
-    guid: 1b1dba9237e3a4df3b234c59811baeb7
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Option_Menu.unity
-    guid: 18f7b9b9d639347a680bcd8efa37f994
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Credits.unity
-    guid: 562da73a7e32a4fcfbecd000a38a3133
-  - enabled: 0
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level1toDelet.unity
-    guid: dc0835a46172c47e5a32fe5cd4354809
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level2.unity
-    guid: da8972525e6e948ffbf48a323d6e8bb0
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level3.unity
-    guid: e01c699cd3c704919a435d2c400618b1
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level4.unity
-    guid: 79ca1ad71253b4e0d9c82be6c6b15753
-  - enabled: 0
-    path: Assets/Scenes/Rees Work/Level-1.unity
-    guid: ebdcbc59c8f774ca1903e0b8bb2d3106
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Sewer_Cutscene1.unity
-    guid: 60541268573fc4e4f834b057bb6459bc
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Death_Scene.unity
-    guid: ac3070a9e5c6543ea9ced81d3605ca83
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/IntroFamilyDeath.unity
-    guid: 940ed081cc33b4e96aa064442c642310
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level5.unity
-    guid: c6b67291ffd2f41678e04c4d493901b0
-  - enabled: 1
-    path: Assets/Scenes/OFFICIAL_LEVELS/Level6.unity
-    guid: cb7fe4ae40bfd4e7db6588cd8cf952ab
+  m_Scenes: []
   m_configObjects: {}
