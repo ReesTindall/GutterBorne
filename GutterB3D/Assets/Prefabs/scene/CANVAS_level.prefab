@@ -184,7 +184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[ ESC] to PAUSE'
+  m_Text: '[ESC] to PAUSE'
 --- !u!1001 &3890936789029778904
 PrefabInstance:
   m_ObjectHideFlags: 0
