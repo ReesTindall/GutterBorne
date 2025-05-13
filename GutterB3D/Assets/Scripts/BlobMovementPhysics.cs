@@ -38,17 +38,32 @@ public class BlobMovementPhysics : MonoBehaviour
         audioSource.outputAudioMixerGroup = mixerGroup;
 
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
+
 
     void Update()
     {
-        if (GameHandler_PauseMenu.GameisPaused) return; 
-        // Rotate slime with mouse
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        if (GameHandler_PauseMenu.GameisPaused) return;
+
+        // Restore cursor lock if lost (click to regain control)
+        if (Cursor.lockState != CursorLockMode.Locked && Input.GetMouseButtonDown(0))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        // Rotate slime with raw mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX);
+        // if (GameHandler_PauseMenu.GameisPaused) return; 
+        // // Rotate slime with mouse
+        // float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+        // transform.Rotate(Vector3.up * mouseX);
 
         // Get movement input
-        float v = Input.GetAxis("Vertical");
+        float v = Input.GetAxisRaw("Vertical");
         moveInput = transform.forward * v;
 
         // Jump input
