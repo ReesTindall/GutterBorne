@@ -1,21 +1,25 @@
+
+using System.IO;
 using UnityEngine;
+using UnityEngine.Video;
 
 [RequireComponent(typeof(Collider))]
-public class videoTrigger : MonoBehaviour
+public class VideoTrigger2 : MonoBehaviour
 {
-    [Tooltip("GameObject that holds your Canvas or animated object.")]
-    public GameObject animatedObject;
+    [Tooltip("Drag the GameObject that holds your Canvas + VideoPlayer here.")]
+    public GameObject videoCanvas;
 
-    [Tooltip("Animator component to trigger.")]
-    public Animator animator;
+    [Tooltip("Drag the VideoPlayer component here.")]
+    public VideoPlayer videoPlayer;
 
-    [Tooltip("Name of the trigger parameter in the Animator.")]
-    public string animationTriggerName = "Play";
+    [Tooltip("Name of the video file in StreamingAssets.")]
+    [SerializeField] string videoFileName;
 
     private Collider triggerCollider;
 
     void Reset()
     {
+        // Make sure this Collider is set as a trigger by default
         triggerCollider = GetComponent<Collider>();
         triggerCollider.isTrigger = true;
     }
@@ -24,32 +28,46 @@ public class videoTrigger : MonoBehaviour
     {
         triggerCollider = triggerCollider ?? GetComponent<Collider>();
 
-        // Optionally hide the object until triggered
-        if (animatedObject != null)
-            animatedObject.SetActive(false);
+        if (videoCanvas != null)
+            videoCanvas.SetActive(false);
+
+        if (videoPlayer != null)
+            videoPlayer.loopPointReached += OnVideoEnd;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (animatedObject != null)
-                animatedObject.SetActive(true);
+            if (videoCanvas != null)
+                videoCanvas.SetActive(true);
 
-            if (animator != null && !string.IsNullOrEmpty(animationTriggerName))
-                animator.SetTrigger(animationTriggerName);
+            if (videoPlayer != null)
+            {
+                string videoPath = Path.Combine(Application.streamingAssetsPath, videoFileName);
+                Debug.Log("Video path: " + videoPath);
+                videoPlayer.url = videoPath;
+                videoPlayer.Play();
+            }
 
-            triggerCollider.enabled = false; // Prevent retriggering
+            triggerCollider.enabled = false;
         }
     }
+
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        if (videoCanvas != null)
+            videoCanvas.SetActive(false);
+    }
 }
+
 
 
 // using UnityEngine;
 // using UnityEngine.Video;
 
 // [RequireComponent(typeof(Collider))]
-// public class VideoTrigger : MonoBehaviour
+// public class VideoTrigger2 : MonoBehaviour
 // {
 //     [Tooltip("Drag the GameObject that holds your Canvas + VideoPlayer here.")]
 //     public GameObject videoCanvas;
