@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3530595491721744129
 Transform:
   m_ObjectHideFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 363013545592053067}
+  rotationSpeed: 30
 --- !u!1 &2457076435219437306
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 2457076435219437306}
+  rotationSpeed: 30
 --- !u!1 &3333411957778116123
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 3333411957778116123}
+  rotationSpeed: 30
 --- !u!1 &5457553394987279120
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2608898418465190782
 Transform:
   m_ObjectHideFlags: 0
@@ -482,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 5457553394987279120}
+  rotationSpeed: 30
 --- !u!1 &5529105732394224257
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 5529105732394224257}
+  rotationSpeed: 30
 --- !u!1 &6621331824995504919
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 6621331824995504919}
+  rotationSpeed: 30
 --- !u!1 &6999887390326013410
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +763,7 @@ Transform:
   - {fileID: 2608898418465190782}
   - {fileID: 3530595491721744129}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.142, y: -0.365, z: 1.958}
 --- !u!1001 &4193179369143602944
 PrefabInstance:
