@@ -46,7 +46,7 @@ Transform:
   - {fileID: 5969062672026714537}
   - {fileID: 1194389589545996619}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &478117790665392055
 Rigidbody:
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeIncrease: 0.05
   centerPnt: {fileID: 6957751342577238404}
-  absorptionSound: {fileID: 8300000, guid: 91a91da3f66d74778b84b874e2a63cf0, type: 3}
+  absorptionSound: {fileID: 8300000, guid: c27d5d561c5c849bf8bb5082fd70174c, type: 3}
   mixerGroup: {fileID: -6250887746600777087, guid: d226115e3019d4473920256788df2707, type: 2}
 --- !u!114 &6395953800066367556
 MonoBehaviour:
