@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class videoTrigger : MonoBehaviour
+public class AnimationTrigger : MonoBehaviour
 {
     [Tooltip("GameObject that holds your Canvas or animated object.")]
     public GameObject animatedObject;
